@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/features/on_boarding/data/models/on_boarding_model.dart';
+
+class PageViewItem extends StatelessWidget {
+  const PageViewItem({super.key, required this.onBoardingModel, required this.index});
+
+  final int index;
+  final OnBoardingModel onBoardingModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: MediaQuery.sizeOf(context).height * 0.5,
+          width: double.infinity,
+          child: Stack(
+            children: [
+              SvgPicture.asset(
+                onBoardingModel.backgroundImagePath,
+                fit: BoxFit.fill,
+                width: double.infinity,
+              ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 0,
+                child: SvgPicture.asset(onBoardingModel.imagePath),
+              ),
+              index == 1
+                  ? const SizedBox.shrink()
+                  : Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'تخطى',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ),
+            ],
+          ),
+        ),
+        SizedBox(height: 47),
+        onBoardingModel.title,
+        SizedBox(height: 24),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            onBoardingModel.subTitle,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+        ),
+      ],
+    );
+  }
+}
