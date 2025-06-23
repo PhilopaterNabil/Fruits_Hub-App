@@ -3,10 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/features/on_boarding/data/models/on_boarding_model.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, required this.onBoardingModel, required this.index});
+  const PageViewItem(
+      {super.key, required this.onBoardingModel, required this.index, required this.isVisible});
 
   final int index;
   final OnBoardingModel onBoardingModel;
+  final bool isVisible;
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +45,15 @@ class PageViewItem extends StatelessWidget {
         SizedBox(height: 47),
         onBoardingModel.title,
         SizedBox(height: 24),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text(
-            onBoardingModel.subTitle,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyLarge,
+        Visibility(
+          visible: isVisible,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              onBoardingModel.subTitle,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
           ),
         ),
       ],
