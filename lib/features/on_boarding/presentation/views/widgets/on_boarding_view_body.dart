@@ -40,13 +40,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
-            color: AppColors.greenColor.withOpacity(0.5),
-            activeColor: AppColors.greenColor,
-            size: Size(10, 10),
-            activeSize: Size(40, 10),
-            activeShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
-            ),
+            color: currentPage == 0 ? AppColors.greenColor.withOpacity(0.5) : AppColors.greenColor,
+            activeColor: currentPage == 0 ? AppColors.greenColor : AppColors.greenColor,
+            size: Size(11, 11),
           ),
         ),
         SizedBox(height: 29),
