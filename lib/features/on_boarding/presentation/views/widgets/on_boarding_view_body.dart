@@ -43,6 +43,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             color: currentPage == 0 ? AppColors.greenColor.withOpacity(0.5) : AppColors.greenColor,
             activeColor: currentPage == 0 ? AppColors.greenColor : AppColors.greenColor,
             size: Size(11, 11),
+            activeSize: Size(11, 11),
+            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
           ),
         ),
         SizedBox(height: 29),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/features/on_boarding/data/models/on_boarding_model.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -34,10 +35,7 @@ class PageViewItem extends StatelessWidget {
                   ? const SizedBox.shrink()
                   : Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                        'تخطى',
-                        style: Theme.of(context).textTheme.bodySmall,
-                      ),
+                      child: Text('تخطى', style: AppTextStyles.font13LightGreyRegular),
                     ),
             ],
           ),
@@ -52,7 +50,7 @@ class PageViewItem extends StatelessWidget {
             child: Text(
               onBoardingModel.subTitle,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: AppTextStyles.font16GreySemiBold,
             ),
           ),
         ),
