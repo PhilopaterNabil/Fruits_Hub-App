@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/features/on_boarding/data/models/on_boarding_model.dart';
 
@@ -33,9 +34,12 @@ class PageViewItem extends StatelessWidget {
               ),
               index == 1
                   ? const SizedBox.shrink()
-                  : Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text('تخطى', style: AppTextStyles.font13LightGreyRegular),
+                  : GestureDetector(
+                      onTap: () => Navigator.pushReplacementNamed(context, Routes.loginScreen),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text('تخطى', style: AppTextStyles.font13LightGreyRegular),
+                      ),
                     ),
             ],
           ),

@@ -23,6 +23,7 @@ class FruitsHubApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Cairo',
         useMaterial3: true,
       ),
       initialRoute: Routes.splashScreen,
