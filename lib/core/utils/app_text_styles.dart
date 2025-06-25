@@ -1,83 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/utils/font_manager.dart';
 
 abstract class AppTextStyles {
-  static const TextStyle bold13 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 13,
+  static TextStyle bold13 = TextStyle(
+    fontSize: FontSizeManager.s13,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle font23BlackBold = TextStyle(
-    fontSize: 23,
+  static TextStyle font23BlackBold = TextStyle(
+    fontSize: FontSizeManager.s23,
     color: AppColors.blackColor,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle semiBold13 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 13,
+  static TextStyle semiBold13 = TextStyle(
+    fontSize: FontSizeManager.s13,
+    fontWeight: FontWeightManager.semiBold,
   );
 
-  static const TextStyle font13LightGreyRegular = TextStyle(
-    fontSize: 13,
+  static TextStyle font13LightGreyRegular = TextStyle(
+    fontSize: FontSizeManager.s13,
     color: AppColors.lightGreyColor,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeightManager.regular,
   );
 
-  static const TextStyle bold16 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 16,
+  static TextStyle bold16 = TextStyle(
+    fontSize: FontSizeManager.s16,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle bold19 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 19,
+  static TextStyle bold19 = TextStyle(
+    fontSize: FontSizeManager.s19,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle font16GreySemiBold = TextStyle(
-    fontSize: 16,
+  static TextStyle font16GreySemiBold = TextStyle(
+    fontSize: FontSizeManager.s16,
     color: AppColors.greyColor,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeightManager.semiBold,
   );
 
-  static const TextStyle font16WhiteBold = TextStyle(
-    fontSize: 16,
+  static TextStyle font16WhiteBold = TextStyle(
+    fontSize: FontSizeManager.s16,
     color: AppColors.whiteColor,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle bold28 = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 28,
+  static TextStyle bold28 = TextStyle(
+    fontSize: FontSizeManager.s28,
+    fontWeight: FontWeightManager.bold,
   );
 
-  static const TextStyle regular22 = TextStyle(
-    fontWeight: FontWeight.normal,
-    fontSize: 22,
+  static TextStyle regular22 = TextStyle(
+    fontSize: FontSizeManager.s22,
+    fontWeight: FontWeightManager.regular,
   );
 
-  static const TextStyle semiBold11 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 11,
+  static TextStyle semiBold11 = TextStyle(
+    fontSize: FontSizeManager.s11,
+    fontWeight: FontWeightManager.semiBold,
   );
 
-  static const TextStyle medium15 = TextStyle(
-    fontWeight: FontWeight.w500,
-    fontSize: 15,
+  static TextStyle medium15 = TextStyle(
+    fontSize: FontSizeManager.s15,
+    fontWeight: FontWeightManager.medium,
   );
 
-  static const TextStyle regular26 = TextStyle(
-    fontWeight: FontWeight.normal,
-    fontSize: 26,
+  static TextStyle regular26 = TextStyle(
+    fontSize: FontSizeManager.s26,
+    fontWeight: FontWeightManager.regular,
   );
 
-  static const TextStyle regular16 = TextStyle(
-    fontWeight: FontWeight.normal,
-    fontSize: 16,
+  static TextStyle regular16 = TextStyle(
+    fontSize: FontSizeManager.s16,
+    fontWeight: FontWeightManager.regular,
   );
 
-  static const TextStyle regular11 = TextStyle(
-    fontWeight: FontWeight.normal,
-    fontSize: 11,
+  static TextStyle regular11 = TextStyle(
+    fontSize: FontSizeManager.s11,
+    fontWeight: FontWeightManager.regular,
   );
 }
