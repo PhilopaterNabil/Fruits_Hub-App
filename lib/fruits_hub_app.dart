@@ -28,6 +28,10 @@ class FruitsHubApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           scaffoldBackgroundColor: Colors.white,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.white,
+            elevation: 0,
+          ),
           fontFamily: FontType.kCairo,
           useMaterial3: true,
         ),
