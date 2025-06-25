@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/routing/app_router.dart';
-import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/utils/font_manager.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -15,7 +14,7 @@ class FruitsHubApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: 'Fruits Hub',
         localizationsDelegates: [
@@ -32,8 +31,7 @@ class FruitsHubApp extends StatelessWidget {
           fontFamily: FontType.kCairo,
           useMaterial3: true,
         ),
-        initialRoute: Routes.splashScreen,
-        onGenerateRoute: AppRouter().generateRoute,
+        routerConfig: AppRouter.router,
       ),
     );
   }
