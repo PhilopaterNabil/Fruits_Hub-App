@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/core/helper/extensions.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
@@ -39,7 +40,7 @@ class PageViewItem extends StatelessWidget {
                   : GestureDetector(
                       onTap: () {
                         SharedPreferencesSingleton.setBool(kIsOnBoardingViewSeen, true);
-                        Navigator.pushReplacementNamed(context, Routes.loginScreen);
+                        context.goToNamed(Routes.loginScreen);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),

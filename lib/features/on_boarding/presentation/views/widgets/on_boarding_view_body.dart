@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper/extensions.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
@@ -61,7 +62,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: CustomButton(
               onPressed: () {
                 SharedPreferencesSingleton.setBool(kIsOnBoardingViewSeen, true);
-                Navigator.pushReplacementNamed(context, Routes.loginScreen);
+                context.goToNamed(Routes.loginScreen);
               },
               title: 'ابدأ اللان',
             ),
