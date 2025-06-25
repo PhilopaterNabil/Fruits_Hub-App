@@ -3,8 +3,9 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/font_manager.dart';
 
 abstract class AppTextStyles {
-  static TextStyle bold13 = TextStyle(
+  static TextStyle font13LightGreyBold = TextStyle(
     fontSize: FontSizeManager.s13,
+    color: AppColors.lightGreyColor,
     fontWeight: FontWeightManager.bold,
   );
 
@@ -16,6 +17,7 @@ abstract class AppTextStyles {
 
   static TextStyle semiBold13 = TextStyle(
     fontSize: FontSizeManager.s13,
+    color: AppColors.accentGreenColor,
     fontWeight: FontWeightManager.semiBold,
   );
 
@@ -25,13 +27,9 @@ abstract class AppTextStyles {
     fontWeight: FontWeightManager.regular,
   );
 
-  static TextStyle bold16 = TextStyle(
-    fontSize: FontSizeManager.s16,
-    fontWeight: FontWeightManager.bold,
-  );
-
-  static TextStyle bold19 = TextStyle(
+  static TextStyle font19BlackBold = TextStyle(
     fontSize: FontSizeManager.s19,
+    color: AppColors.blackColor,
     fontWeight: FontWeightManager.bold,
   );
 
@@ -47,38 +45,45 @@ abstract class AppTextStyles {
     fontWeight: FontWeightManager.bold,
   );
 
-  static TextStyle bold28 = TextStyle(
+  static TextStyle font28WhiteBold = TextStyle(
     fontSize: FontSizeManager.s28,
+    color: AppColors.whiteColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.bold,
   );
 
-  static TextStyle regular22 = TextStyle(
+  static TextStyle font22BlackRegular = TextStyle(
     fontSize: FontSizeManager.s22,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.regular,
   );
 
-  static TextStyle semiBold11 = TextStyle(
+  static TextStyle font11BlackSemiBold = TextStyle(
     fontSize: FontSizeManager.s11,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.semiBold,
   );
 
-  static TextStyle medium15 = TextStyle(
+  static TextStyle font15BlackMedium = TextStyle(
     fontSize: FontSizeManager.s15,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.medium,
   );
 
-  static TextStyle regular26 = TextStyle(
+  static TextStyle font26BlackRegular = TextStyle(
     fontSize: FontSizeManager.s26,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.regular,
   );
 
-  static TextStyle regular16 = TextStyle(
+  static TextStyle font16BlackRegular = TextStyle(
     fontSize: FontSizeManager.s16,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.regular,
   );
 
-  static TextStyle regular11 = TextStyle(
+  static TextStyle font11BlackRegular = TextStyle(
     fontSize: FontSizeManager.s11,
+    color: AppColors.blackColor, // This Color is Default in the Text Style
     fontWeight: FontWeightManager.regular,
   );
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontType {
-  static const String kIBMPlexSansArabic = 'IBM Plex Sans Arabic';
+  static const String kCairo = 'Cairo';
 }
 
 class FontWeightManager {

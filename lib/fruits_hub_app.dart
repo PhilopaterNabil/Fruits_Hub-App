@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/routing/app_router.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
+import 'package:fruits_hub/core/utils/font_manager.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class FruitsHubApp extends StatelessWidget {
@@ -28,7 +29,7 @@ class FruitsHubApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           scaffoldBackgroundColor: Colors.white,
-          fontFamily: 'Cairo',
+          fontFamily: FontType.kCairo,
           useMaterial3: true,
         ),
         initialRoute: Routes.splashScreen,
