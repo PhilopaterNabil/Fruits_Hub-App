@@ -6,6 +6,18 @@ class AppImagesAssets {
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
 
+  /// Assets for imagesApplIcon
+  /// assets/images/appl_icon.svg
+  static const String imagesApplIcon = "assets/images/appl_icon.svg";
+
+  /// Assets for imagesFacebookIcon
+  /// assets/images/facebook_icon.svg
+  static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";
+
+  /// Assets for imagesGoogleIcon
+  /// assets/images/google_icon.svg
+  static const String imagesGoogleIcon = "assets/images/google_icon.svg";
+
   /// Assets for imagesLogo
   /// assets/images/logo.svg
   static const String imagesLogo = "assets/images/logo.svg";
@@ -35,4 +47,12 @@ class AppImagesAssets {
   /// Assets for imagesSplashBottom
   /// assets/images/splash_bottom.svg
   static const String imagesSplashBottom = "assets/images/splash_bottom.svg";
+
+  /// Assets for imagesSplashView
+  /// assets/images/splash_view.png
+  static const String imagesSplashView = "assets/images/splash_view.png";
+
+  /// Assets for imagesSplashViewAndroid12
+  /// assets/images/splash_view_android_12.png
+  static const String imagesSplashViewAndroid12 = "assets/images/splash_view_android_12.png";
 }
