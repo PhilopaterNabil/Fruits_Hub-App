@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/custom_text_form_field.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -9,7 +11,7 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      child: const SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 24),
@@ -26,6 +28,34 @@ class LoginViewBody extends StatelessWidget {
                 color: AppColors.silverGreyColor,
               ),
             ),
+            SizedBox(height: 16),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'نسيت كلمة المرور؟',
+                style: AppTextStyles.font13AccentGreenSemiBold,
+              ),
+            ),
+            SizedBox(height: 33),
+            CustomButton(
+              title: 'تسجيل دخول',
+              onPressed: () {},
+            ),
+            SizedBox(height: 24),
+            Text.rich(
+              textAlign: TextAlign.center,
+              TextSpan(
+                text: 'لا تمتلك حساب؟ ',
+                style: AppTextStyles.font16GreySemiBold.copyWith(color: AppColors.lightGreyColor),
+                children: [
+                  TextSpan(
+                    text: 'قم بإنشاء حساب',
+                    style: AppTextStyles.font16GreySemiBold.copyWith(color: AppColors.greenColor),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 33),
           ],
         ),
       ),
