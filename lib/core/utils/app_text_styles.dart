@@ -15,7 +15,7 @@ abstract class AppTextStyles {
     fontWeight: FontWeightManager.bold,
   );
 
-  static TextStyle semiBold13 = TextStyle(
+  static TextStyle font13AccentGreenSemiBold = TextStyle(
     fontSize: FontSizeManager.s13,
     color: AppColors.accentGreenColor,
     fontWeight: FontWeightManager.semiBold,
