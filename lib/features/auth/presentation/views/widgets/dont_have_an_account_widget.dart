@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper/extensions.dart';
+import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
@@ -14,6 +17,8 @@ class DontHaveAnAccountWidget extends StatelessWidget {
         style: AppTextStyles.font16GreySemiBold.copyWith(color: AppColors.lightGreyColor),
         children: [
           TextSpan(
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => context.pushReplacementTo(Routes.signupScreen),
             text: 'قم بإنشاء حساب',
             style: AppTextStyles.font16GreySemiBold.copyWith(color: AppColors.greenColor),
           ),
