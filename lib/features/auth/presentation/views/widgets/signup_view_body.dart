@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/custom_text_form_field.dart';
+import 'package:fruits_hub/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -32,13 +33,8 @@ class SignupViewBody extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            CustomTextFormField(
-              hintText: 'تاكيد كلمة المرور',
-              keyboardType: TextInputType.visiblePassword,
-              suffixIcon: Icon(
-                Icons.remove_red_eye_outlined,
-                color: AppColors.silverGreyColor,
-              ),
+            TermsAndConditions(
+              
             ),
           ],
         ),
