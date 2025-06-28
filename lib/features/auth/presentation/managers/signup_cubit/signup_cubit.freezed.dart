@@ -44,25 +44,25 @@ mixin _$SignupState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitial value) initial,
-    required TResult Function(_SignupLoading value) loading,
-    required TResult Function(_SignupSuccess value) success,
-    required TResult Function(_SignupFailure value) failure,
+    required TResult Function(SignupLoading value) loading,
+    required TResult Function(SignupSuccess value) success,
+    required TResult Function(SignupFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitial value)? initial,
-    TResult? Function(_SignupLoading value)? loading,
-    TResult? Function(_SignupSuccess value)? success,
-    TResult? Function(_SignupFailure value)? failure,
+    TResult? Function(SignupLoading value)? loading,
+    TResult? Function(SignupSuccess value)? success,
+    TResult? Function(SignupFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitial value)? initial,
-    TResult Function(_SignupLoading value)? loading,
-    TResult Function(_SignupSuccess value)? success,
-    TResult Function(_SignupFailure value)? failure,
+    TResult Function(SignupLoading value)? loading,
+    TResult Function(SignupSuccess value)? success,
+    TResult Function(SignupFailure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,9 +168,9 @@ class _$SignupInitialImpl implements _SignupInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitial value) initial,
-    required TResult Function(_SignupLoading value) loading,
-    required TResult Function(_SignupSuccess value) success,
-    required TResult Function(_SignupFailure value) failure,
+    required TResult Function(SignupLoading value) loading,
+    required TResult Function(SignupSuccess value) success,
+    required TResult Function(SignupFailure value) failure,
   }) {
     return initial(this);
   }
@@ -179,9 +179,9 @@ class _$SignupInitialImpl implements _SignupInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitial value)? initial,
-    TResult? Function(_SignupLoading value)? loading,
-    TResult? Function(_SignupSuccess value)? success,
-    TResult? Function(_SignupFailure value)? failure,
+    TResult? Function(SignupLoading value)? loading,
+    TResult? Function(SignupSuccess value)? success,
+    TResult? Function(SignupFailure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -190,9 +190,9 @@ class _$SignupInitialImpl implements _SignupInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitial value)? initial,
-    TResult Function(_SignupLoading value)? loading,
-    TResult Function(_SignupSuccess value)? success,
-    TResult Function(_SignupFailure value)? failure,
+    TResult Function(SignupLoading value)? loading,
+    TResult Function(SignupSuccess value)? success,
+    TResult Function(SignupFailure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -227,7 +227,7 @@ class __$$SignupLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupLoadingImpl implements _SignupLoading {
+class _$SignupLoadingImpl implements SignupLoading {
   const _$SignupLoadingImpl();
 
   @override
@@ -285,9 +285,9 @@ class _$SignupLoadingImpl implements _SignupLoading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitial value) initial,
-    required TResult Function(_SignupLoading value) loading,
-    required TResult Function(_SignupSuccess value) success,
-    required TResult Function(_SignupFailure value) failure,
+    required TResult Function(SignupLoading value) loading,
+    required TResult Function(SignupSuccess value) success,
+    required TResult Function(SignupFailure value) failure,
   }) {
     return loading(this);
   }
@@ -296,9 +296,9 @@ class _$SignupLoadingImpl implements _SignupLoading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitial value)? initial,
-    TResult? Function(_SignupLoading value)? loading,
-    TResult? Function(_SignupSuccess value)? success,
-    TResult? Function(_SignupFailure value)? failure,
+    TResult? Function(SignupLoading value)? loading,
+    TResult? Function(SignupSuccess value)? success,
+    TResult? Function(SignupFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -307,9 +307,9 @@ class _$SignupLoadingImpl implements _SignupLoading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitial value)? initial,
-    TResult Function(_SignupLoading value)? loading,
-    TResult Function(_SignupSuccess value)? success,
-    TResult Function(_SignupFailure value)? failure,
+    TResult Function(SignupLoading value)? loading,
+    TResult Function(SignupSuccess value)? success,
+    TResult Function(SignupFailure value)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -319,8 +319,8 @@ class _$SignupLoadingImpl implements _SignupLoading {
   }
 }
 
-abstract class _SignupLoading implements SignupState {
-  const factory _SignupLoading() = _$SignupLoadingImpl;
+abstract class SignupLoading implements SignupState {
+  const factory SignupLoading() = _$SignupLoadingImpl;
 }
 
 /// @nodoc
@@ -358,7 +358,7 @@ class __$$SignupSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupSuccessImpl implements _SignupSuccess {
+class _$SignupSuccessImpl implements SignupSuccess {
   const _$SignupSuccessImpl({required this.userEntity});
 
   @override
@@ -430,9 +430,9 @@ class _$SignupSuccessImpl implements _SignupSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitial value) initial,
-    required TResult Function(_SignupLoading value) loading,
-    required TResult Function(_SignupSuccess value) success,
-    required TResult Function(_SignupFailure value) failure,
+    required TResult Function(SignupLoading value) loading,
+    required TResult Function(SignupSuccess value) success,
+    required TResult Function(SignupFailure value) failure,
   }) {
     return success(this);
   }
@@ -441,9 +441,9 @@ class _$SignupSuccessImpl implements _SignupSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitial value)? initial,
-    TResult? Function(_SignupLoading value)? loading,
-    TResult? Function(_SignupSuccess value)? success,
-    TResult? Function(_SignupFailure value)? failure,
+    TResult? Function(SignupLoading value)? loading,
+    TResult? Function(SignupSuccess value)? success,
+    TResult? Function(SignupFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -452,9 +452,9 @@ class _$SignupSuccessImpl implements _SignupSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitial value)? initial,
-    TResult Function(_SignupLoading value)? loading,
-    TResult Function(_SignupSuccess value)? success,
-    TResult Function(_SignupFailure value)? failure,
+    TResult Function(SignupLoading value)? loading,
+    TResult Function(SignupSuccess value)? success,
+    TResult Function(SignupFailure value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -464,8 +464,8 @@ class _$SignupSuccessImpl implements _SignupSuccess {
   }
 }
 
-abstract class _SignupSuccess implements SignupState {
-  const factory _SignupSuccess({required final UserEntity userEntity}) =
+abstract class SignupSuccess implements SignupState {
+  const factory SignupSuccess({required final UserEntity userEntity}) =
       _$SignupSuccessImpl;
 
   UserEntity get userEntity;
@@ -512,7 +512,7 @@ class __$$SignupFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupFailureImpl implements _SignupFailure {
+class _$SignupFailureImpl implements SignupFailure {
   const _$SignupFailureImpl({required this.message});
 
   @override
@@ -583,9 +583,9 @@ class _$SignupFailureImpl implements _SignupFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignupInitial value) initial,
-    required TResult Function(_SignupLoading value) loading,
-    required TResult Function(_SignupSuccess value) success,
-    required TResult Function(_SignupFailure value) failure,
+    required TResult Function(SignupLoading value) loading,
+    required TResult Function(SignupSuccess value) success,
+    required TResult Function(SignupFailure value) failure,
   }) {
     return failure(this);
   }
@@ -594,9 +594,9 @@ class _$SignupFailureImpl implements _SignupFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignupInitial value)? initial,
-    TResult? Function(_SignupLoading value)? loading,
-    TResult? Function(_SignupSuccess value)? success,
-    TResult? Function(_SignupFailure value)? failure,
+    TResult? Function(SignupLoading value)? loading,
+    TResult? Function(SignupSuccess value)? success,
+    TResult? Function(SignupFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -605,9 +605,9 @@ class _$SignupFailureImpl implements _SignupFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignupInitial value)? initial,
-    TResult Function(_SignupLoading value)? loading,
-    TResult Function(_SignupSuccess value)? success,
-    TResult Function(_SignupFailure value)? failure,
+    TResult Function(SignupLoading value)? loading,
+    TResult Function(SignupSuccess value)? success,
+    TResult Function(SignupFailure value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -617,8 +617,8 @@ class _$SignupFailureImpl implements _SignupFailure {
   }
 }
 
-abstract class _SignupFailure implements SignupState {
-  const factory _SignupFailure({required final String message}) =
+abstract class SignupFailure implements SignupState {
+  const factory SignupFailure({required final String message}) =
       _$SignupFailureImpl;
 
   String get message;

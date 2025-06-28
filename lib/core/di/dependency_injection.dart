@@ -1,3 +1,7 @@
+import 'package:fruits_hub/core/services/firebase_auth_service.dart';
+import 'package:fruits_hub/features/auth/data/repos/auth_repo_impl.dart';
+import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
+import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/splash/data/repos/splash_repo.dart';
 import 'package:fruits_hub/features/splash/data/repos/splash_repo_impl.dart';
 import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
@@ -10,6 +14,8 @@ Future<void> setupGetIt() async {
   // final dio = await DioFactory.getDio();
   // getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
+  getIt.registerLazySingleton<FirebaseAuthService>(() => FirebaseAuthService());
+
   // splash
   getIt.registerLazySingleton<SplashRepo>(() => SplashRepoImpl());
   getIt.registerLazySingleton<SplashCubit>(() => SplashCubit(getIt()));
@@ -18,9 +24,10 @@ Future<void> setupGetIt() async {
   // getIt.registerLazySingleton<LoginRepo>(() => LoginRepoImpl(apiService: getIt()));
   // getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
-  // // sign up
-  // getIt.registerLazySingleton<SignUpRepo>(() => SignUpRepo(apiService: getIt()));
-  // getIt.registerFactory<SignUpCubit>(() => SignUpCubit(getIt()));
+  // sign up
+  getIt.registerLazySingleton<AuthRepo>(
+      () => AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()));
+  getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 
   // // home
   // getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
