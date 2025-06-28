@@ -3,7 +3,7 @@ import 'package:fruits_hub/core/di/dependency_injection.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
-import 'package:fruits_hub/features/on_boarding/presentation/managers/splash_cubit/splash_cubit.dart';
+import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
