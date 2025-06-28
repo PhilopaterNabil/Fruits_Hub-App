@@ -1,6 +1,6 @@
-import 'package:fruits_hub/features/on_boarding/data/repos/splash_repo.dart';
-import 'package:fruits_hub/features/on_boarding/data/repos/splash_repo_impl.dart';
-import 'package:fruits_hub/features/on_boarding/presentation/managers/splash_cubit/splash_cubit.dart';
+import 'package:fruits_hub/features/splash/data/repos/splash_repo.dart';
+import 'package:fruits_hub/features/splash/data/repos/splash_repo_impl.dart';
+import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;

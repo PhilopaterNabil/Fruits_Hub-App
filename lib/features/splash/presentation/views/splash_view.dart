@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/extensions.dart';
-import 'package:fruits_hub/features/on_boarding/presentation/managers/splash_cubit/splash_cubit.dart';
+import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
 import 'package:fruits_hub/features/splash/presentation/views/widgets/splash_view_body.dart';
 
 class SplashView extends StatelessWidget {
