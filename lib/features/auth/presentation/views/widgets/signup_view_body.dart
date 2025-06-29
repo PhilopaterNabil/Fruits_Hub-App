@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper/extensions.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
-import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/auth_switch_prompt.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signup_button_bloc_consumer.dart';
@@ -42,14 +42,8 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 onSaved: (value) => email = value!,
               ),
               const SizedBox(height: 16),
-              CustomTextFormField(
-                hintText: 'كلمة المرور',
-                keyboardType: TextInputType.visiblePassword,
+              PasswordField(
                 onSaved: (value) => password = value!,
-                suffixIcon: Icon(
-                  Icons.remove_red_eye_outlined,
-                  color: AppColors.silverGreyColor,
-                ),
               ),
               const SizedBox(height: 16),
               const TermsAndConditions(),
