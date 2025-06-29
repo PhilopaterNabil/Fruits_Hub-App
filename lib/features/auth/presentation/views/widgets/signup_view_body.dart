@@ -16,8 +16,11 @@ class SignupViewBody extends StatefulWidget {
 
 class _SignupViewBodyState extends State<SignupViewBody> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  String? userName, email, password;
+
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  String? userName, email, password;
+  late bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,13 +49,20 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                 onSaved: (value) => password = value!,
               ),
               const SizedBox(height: 16),
-              const TermsAndConditions(),
+              TermsAndConditions(
+                onChanged: (value) {
+                  setState(() {
+                    isTermsAccepted = value;
+                  });
+                },
+              ),
               const SizedBox(height: 30),
               SignupButtonBlocConsumer(
                 formKey: formKey,
                 userName: userName ?? '',
                 email: email ?? '',
                 password: password ?? '',
+                isTermsAccepted: isTermsAccepted,
               ),
               const SizedBox(height: 26),
               AuthSwitchPrompt(

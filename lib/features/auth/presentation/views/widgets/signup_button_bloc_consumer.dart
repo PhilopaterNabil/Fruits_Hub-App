@@ -12,10 +12,12 @@ class SignupButtonBlocConsumer extends StatelessWidget {
     required this.userName,
     required this.email,
     required this.password,
+    required this.isTermsAccepted,
   });
 
   final GlobalKey<FormState> formKey;
   final String userName, email, password;
+  final bool isTermsAccepted;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +36,16 @@ class SignupButtonBlocConsumer extends StatelessWidget {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-                context.read<SignupCubit>().createUserWithEmailAndPassword(
-                      name: userName,
-                      email: email,
-                      password: password,
-                    );
+
+                if (isTermsAccepted) {
+                  context.read<SignupCubit>().createUserWithEmailAndPassword(
+                        name: userName,
+                        email: email,
+                        password: password,
+                      );
+                } else {
+                  buildErrorBar(context, 'يجب عليك الموافقة على الشروط والأحكام');
+                }
               }
             },
             title: 'إنشاء حساب جديد',
