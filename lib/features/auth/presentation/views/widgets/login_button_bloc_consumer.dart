@@ -21,11 +21,14 @@ class LoginButtonBlocConsumer extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        return CustomProgressHud(
-          isLoading: state is LoginLoading,
-          child: CustomButton(
-            title: 'تسجيل دخول',
-            onPressed: onPressed,
+        return SizedBox(
+          height: 54,
+          child: CustomProgressHud(
+            isLoading: state is LoginLoading,
+            child: CustomButton(
+              title: 'تسجيل دخول',
+              onPressed: onPressed,
+            ),
           ),
         );
       },
