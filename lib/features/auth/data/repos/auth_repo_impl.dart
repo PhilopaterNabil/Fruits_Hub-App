@@ -64,4 +64,15 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure('لقد حدث خطأ ما ، يرجى المحاولة مرة اخرى'));
     }
   }
+
+  @override
+  Future<Either<Failures, UserEntity>> signInWithApple() async {
+    try {
+      var user = await firebaseAuthService.signInWithApple();
+      return right(UserModel.fromFirebaseUser(user));
+    } catch (e) {
+      log('Exception in AuthRepoImpl.signInWithApple: ${e.toString()}');
+      return left(ServerFailure('لقد حدث خطأ ما ، يرجى المحاولة مرة اخرى'));
+    }
+  }
 }
