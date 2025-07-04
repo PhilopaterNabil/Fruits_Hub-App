@@ -46,6 +46,8 @@ class FirebaseAuthService {
         throw CustomException(message: 'لا يوجد حساب بهذا البريد الالكتروني');
       } else if (e.code == 'wrong-password') {
         throw CustomException(message: 'كلمة المرور غير صحيحة');
+      } else if (e.code == 'invalid-credential') {
+        throw CustomException(message: 'لا يوجد حساب بهذا البريد الالكتروني');
       } else if (e.code == 'network-request-failed') {
         throw CustomException(message: 'لا يوجد اتصال بالانترنت ، يرجى المحاولة مرة اخرى');
       } else {
