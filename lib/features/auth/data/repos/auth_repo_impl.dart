@@ -3,15 +3,18 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:fruits_hub/core/errors/exceptions.dart';
 import 'package:fruits_hub/core/errors/failures.dart';
+import 'package:fruits_hub/core/services/database_service.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
+import 'package:fruits_hub/core/utils/backend_endpoint.dart';
 import 'package:fruits_hub/features/auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/auth/domain/entites/user_entity.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthService firebaseAuthService;
+  final DatabaseService databaseService;
 
-  AuthRepoImpl({required this.firebaseAuthService});
+  AuthRepoImpl({required this.firebaseAuthService , required this.databaseService});
   @override
   Future<Either<Failures, UserEntity>> cretateUserWithEmailAndPassword(
       {required String name, required String email, required String password}) async {
@@ -21,7 +24,10 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
       );
 
-      return right(UserModel.fromFirebaseUser(user));
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(userEntity: userEntity);
+
+      return right(userEntity);
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
@@ -31,9 +37,11 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failures, UserEntity>> signInWithEmailAndPassword({required String email, required String password}) async {
+  Future<Either<Failures, UserEntity>> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
     try {
-      var user = await firebaseAuthService.signInWithEmailAndPassword(email: email, password: password);
+      var user =
+          await firebaseAuthService.signInWithEmailAndPassword(email: email, password: password);
       return right(UserModel.fromFirebaseUser(user));
     } on CustomException catch (e) {
       return left(ServerFailure(e.message));
@@ -73,6 +81,15 @@ class AuthRepoImpl extends AuthRepo {
     } catch (e) {
       log('Exception in AuthRepoImpl.signInWithApple: ${e.toString()}');
       return left(ServerFailure('لقد حدث خطأ ما ، يرجى المحاولة مرة اخرى'));
+    }
+  }
+
+  @override
+  Future addUserData({required UserEntity userEntity}) async {
+    try {
+      await databaseService.addData(path: BackendEndpoint.addUserData, data: userEntity.toMap());
+    } catch (e) {
+      log('Exception in AuthRepoImpl.addUserData: ${e.toString()}');
     }
   }
 }

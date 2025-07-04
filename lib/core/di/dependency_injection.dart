@@ -1,4 +1,6 @@
+import 'package:fruits_hub/core/services/database_service.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
+import 'package:fruits_hub/core/services/firestore_service.dart';
 import 'package:fruits_hub/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
@@ -15,15 +17,20 @@ Future<void> setupGetIt() async {
   // final dio = await DioFactory.getDio();
   // getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
+  // firebase auth service
   getIt.registerLazySingleton<FirebaseAuthService>(() => FirebaseAuthService());
+  // database service
+  getIt.registerLazySingleton<DatabaseService>(() => FirestoreService());
 
   // splash
   getIt.registerLazySingleton<SplashRepo>(() => SplashRepoImpl());
   getIt.registerLazySingleton<SplashCubit>(() => SplashCubit(getIt()));
 
   // login
-  getIt.registerLazySingleton<AuthRepo>(
-      () => AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()));
+  getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(
+        firebaseAuthService: getIt<FirebaseAuthService>(),
+        databaseService: getIt<DatabaseService>(),
+      ));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
   // sign up
