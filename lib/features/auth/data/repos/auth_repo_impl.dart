@@ -118,4 +118,10 @@ class AuthRepoImpl extends AuthRepo {
       log('Exception in AuthRepoImpl.addUserData: ${e.toString()}');
     }
   }
+
+  @override
+  Future<UserEntity> getUserData({required String uId}) async {
+    var userData = await databaseService.getData(path: BackendEndpoint.getUserData, uId: uId);
+    return UserModel.fromSnapshot(userData);
+  }
 }

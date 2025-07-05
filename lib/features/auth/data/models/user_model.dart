@@ -12,4 +12,12 @@ class UserModel extends UserEntity {
       email: user.email ?? '',
     );
   }
+
+  factory UserModel.fromSnapshot(Map<String, dynamic> snapshot) {
+    return UserModel(
+      uId: snapshot['uId'],
+      name: snapshot['name'],
+      email: snapshot['email'],
+    );
+  }
 }
