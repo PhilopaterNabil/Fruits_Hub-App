@@ -14,6 +14,7 @@ class FirebaseAuthService {
   Future<User> createUserWithEmailAndPassword(
       {required String email, required String password}) async {
     try {
+      log('email: $email, password: $password');
       final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
@@ -27,6 +28,10 @@ class FirebaseAuthService {
         throw CustomException(message: 'لقد تم انشاء حساب بالفعل بهذا البريد الالكتروني');
       } else if (e.code == 'network-request-failed') {
         throw CustomException(message: 'لا يوجد اتصال بالانترنت ، يرجى المحاولة مرة اخرى');
+      } else if (e.code == 'channel-error') {
+        throw CustomException(
+            message:
+                'حدث خطأ داخلي أثناء محاولة إنشاء الحساب. يرجى إعادة تشغيل التطبيق أو تحديثه.');
       } else {
         throw CustomException(message: 'لقد حدث خطأ ما، يرجى المحاولة مرة اخرى');
       }
@@ -141,4 +146,8 @@ class FirebaseAuthService {
 
     return (await FirebaseAuth.instance.signInWithCredential(oauthCredential)).user!;
   }
+
+  Future<void> signOut() async => await FirebaseAuth.instance.signOut();
+
+  Future<void> deleteAccount() async => await FirebaseAuth.instance.currentUser!.delete();
 }

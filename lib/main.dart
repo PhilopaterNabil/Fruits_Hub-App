@@ -9,13 +9,16 @@ import 'package:fruits_hub/firebase_options.dart';
 import 'package:fruits_hub/fruits_hub_app.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
-  await SharedPreferencesSingleton.init();
-  await setupGetIt();
-  Bloc.observer = CustomBlocObserver();
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await SharedPreferencesSingleton.init();
+  await setupGetIt();
+  Bloc.observer = CustomBlocObserver();
+
   runApp(const FruitsHubApp());
 }

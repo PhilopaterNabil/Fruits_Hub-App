@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/extensions.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/widgets/password_field.dart';
+import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/auth_switch_prompt.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:fruits_hub/features/auth/presentation/views/widgets/signup_button_bloc_consumer.dart';
@@ -19,11 +21,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
 
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  String? userName, email, password;
-  late bool isTermsAccepted = false;
-
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<SignupCubit>();
+
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
@@ -36,34 +37,24 @@ class _SignupViewBodyState extends State<SignupViewBody> {
               CustomTextFormField(
                 hintText: 'الاسم كامل',
                 keyboardType: TextInputType.name,
-                onSaved: (value) => userName = value!,
+                onSaved: (value) => cubit.updateUserName(value!),
               ),
               const SizedBox(height: 16),
               CustomTextFormField(
                 hintText: 'البريد الإلكتروني',
                 keyboardType: TextInputType.emailAddress,
-                onSaved: (value) => email = value!,
+                onSaved: (value) => cubit.updateEmail(value!),
               ),
               const SizedBox(height: 16),
               PasswordField(
-                onSaved: (value) => password = value!,
+                onSaved: (value) => cubit.updatePassword(value!),
               ),
               const SizedBox(height: 16),
               TermsAndConditions(
-                onChanged: (value) {
-                  setState(() {
-                    isTermsAccepted = value;
-                  });
-                },
+                onChanged: (value) => cubit.toggleTerms(value),
               ),
               const SizedBox(height: 30),
-              SignupButtonBlocConsumer(
-                formKey: formKey,
-                userName: userName ?? '',
-                email: email ?? '',
-                password: password ?? '',
-                isTermsAccepted: isTermsAccepted,
-              ),
+              SignupButtonBlocConsumer(formKey: formKey),
               const SizedBox(height: 26),
               AuthSwitchPrompt(
                 question: 'تمتلك حساب بالفعل؟ ',
