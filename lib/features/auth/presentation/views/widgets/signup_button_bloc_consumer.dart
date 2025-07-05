@@ -8,11 +8,7 @@ import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/sign
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignupButtonBlocConsumer extends StatelessWidget {
-  const SignupButtonBlocConsumer({
-    super.key,
-    required this.formKey
-
-  });
+  const SignupButtonBlocConsumer({super.key, required this.formKey});
 
   final GlobalKey<FormState> formKey;
 

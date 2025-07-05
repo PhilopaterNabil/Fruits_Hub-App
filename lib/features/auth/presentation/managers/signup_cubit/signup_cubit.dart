@@ -12,8 +12,7 @@ class SignupCubit extends Cubit<SignupState> {
 
   final AuthRepo authRepo;
 
-
-    String? userName;
+  String? userName;
   String? email;
   String? password;
   bool isTermsAccepted = false;
