@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper/build_error_bar.dart';
+import 'package:fruits_hub/core/helper/extensions.dart';
+import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/custom_progress_hud.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
@@ -15,7 +19,10 @@ class LoginButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         state.maybeWhen(
-          success: (user) => print(user),
+          success: (user) {
+            log('✅ Login successful: $user');
+            context.pushReplacementTo(Routes.homeScreen);
+          },
           failure: (message) => buildErrorBar(context, message),
           orElse: () {},
         );
