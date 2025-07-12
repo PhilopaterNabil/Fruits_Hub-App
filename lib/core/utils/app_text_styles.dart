@@ -15,9 +15,9 @@ abstract class AppTextStyles {
     fontWeight: FontWeightManager.regular,
   );
 
-  static TextStyle font16BlackRegular = TextStyle(
+  static TextStyle font16LightGreyRegular = TextStyle(
     fontSize: FontSizeManager.s16,
-    color: AppColors.blackColor, // This Color is Default in the Text Style
+    color: AppColors.lightGreyColor,
     fontWeight: FontWeightManager.regular,
   );
 
