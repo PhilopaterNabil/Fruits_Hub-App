@@ -79,4 +79,8 @@ class AppImagesAssets {
   /// Assets for imagesSplashViewAndroid12
   /// assets/images/splash_view_android_12.png
   static const String imagesSplashViewAndroid12 = "assets/images/splash_view_android_12.png";
+
+  /// Assets for imagesWatermelonTest
+  /// assets/images/watermelon_test.png
+  static const String imagesWatermelonTest = "assets/images/watermelon_test.png";
 }
