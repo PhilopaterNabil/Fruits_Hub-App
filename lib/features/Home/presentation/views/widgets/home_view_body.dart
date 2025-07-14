@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/search_text_field.dart';
+import 'package:fruits_hub/features/Home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/custom_home_app_bar.dart';
-import 'package:fruits_hub/features/Home/presentation/views/widgets/featured_item.dart';
+import 'package:fruits_hub/features/Home/presentation/views/widgets/featured_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -22,24 +21,9 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: 16),
                 SearchTextField(),
                 SizedBox(height: 12),
-                FeaturedItem(),
+                FeaturedList(),
                 SizedBox(height: 12),
-                Row(
-                  children: [
-                    Text(
-                      'الأكثر مبيعًا',
-                      style: AppTextStyles.font16WhiteBold.copyWith(color: AppColors.blackColor),
-                    ),
-                    const Spacer(),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'المزيد',
-                        style: AppTextStyles.font13LightGreyRegular,
-                      ),
-                    ),
-                  ],
-                ),
+                BestSellingHeader(),
                 SizedBox(height: 8),
               ],
             ),

@@ -15,40 +15,52 @@ class FeaturedItem extends StatelessWidget {
       width: width,
       child: AspectRatio(
         aspectRatio: 342 / 158,
-        child: Stack(
-          children: [
-            Image.asset(AppImagesAssets.imagesFruits),
-            Container(
-              width: width / 2,
-              padding: EdgeInsets.all(25),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: svg.Svg(AppImagesAssets.imagesFeaturedItemBackground),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: width * 0.075,
+                child: Image.asset(
+                  AppImagesAssets.imagesFruits,
                   fit: BoxFit.fill,
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'عروض العيد',
-                    style: AppTextStyles.font13LightGreyRegular.copyWith(color: Colors.white),
+              Container(
+                width: width / 2,
+                padding: EdgeInsets.all(25),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: svg.Svg(AppImagesAssets.imagesFeaturedItemBackground),
+                    fit: BoxFit.fill,
                   ),
-                  Spacer(),
-                  Text(
-                    'خصم 25%',
-                    style: AppTextStyles.font19BlackBold.copyWith(color: Colors.white),
-                  ),
-                  SizedBox(height: 7),
-                  FeaturedItemButton(
-                    title: 'تسوق الان',
-                    onPressed: () {},
-                  ),
-                  SizedBox(height: 4),
-                ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'عروض العيد',
+                      style: AppTextStyles.font13LightGreyRegular.copyWith(color: Colors.white),
+                    ),
+                    Spacer(),
+                    Text(
+                      'خصم 25%',
+                      style: AppTextStyles.font19BlackBold.copyWith(color: Colors.white),
+                    ),
+                    SizedBox(height: 7),
+                    FeaturedItemButton(
+                      title: 'تسوق الان',
+                      onPressed: () {},
+                    ),
+                    SizedBox(height: 4),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
