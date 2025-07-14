@@ -18,6 +18,10 @@ class AppImagesAssets {
   /// assets/images/facebook_icon.svg
   static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";
 
+  /// Assets for imagesFeaturedItemBackground
+  /// assets/images/featured_item_background.svg
+  static const String imagesFeaturedItemBackground = "assets/images/featured_item_background.svg";
+
   /// Assets for imagesFilter
   /// assets/images/filter.svg
   static const String imagesFilter = "assets/images/filter.svg";
@@ -25,6 +29,10 @@ class AppImagesAssets {
   /// Assets for imagesFilter2
   /// assets/images/filter2.svg
   static const String imagesFilter2 = "assets/images/filter2.svg";
+
+  /// Assets for imagesFruits
+  /// assets/images/fruits.png
+  static const String imagesFruits = "assets/images/fruits.png";
 
   /// Assets for imagesGoogleIcon
   /// assets/images/google_icon.svg

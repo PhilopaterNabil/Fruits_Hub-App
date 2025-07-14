@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 import 'package:fruits_hub/core/utils/app_images_assets.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/featured_item_button.dart';
@@ -8,32 +9,47 @@ class FeaturedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.sizeOf(context);
+    var width = size.width;
     return SizedBox(
-      width: double.infinity,
-      child: Stack(
-        children: [
-          Image.asset(AppImagesAssets.imagesWatermelonTest),
-          Container(
-            child: Column(
-              children: [
-                Text(
-                  'عروض العيد',
-                  style: AppTextStyles.font13LightGreyRegular.copyWith(color: Colors.white),
+      width: width,
+      child: AspectRatio(
+        aspectRatio: 342 / 158,
+        child: Stack(
+          children: [
+            Image.asset(AppImagesAssets.imagesFruits),
+            Container(
+              width: width / 2,
+              padding: EdgeInsets.all(25),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: svg.Svg(AppImagesAssets.imagesFeaturedItemBackground),
+                  fit: BoxFit.fill,
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'خصم 25%',
-                  style: AppTextStyles.font19BlackBold.copyWith(color: Colors.white),
-                ),
-                SizedBox(height: 7),
-                FeaturedItemButton(
-                  title: 'تسوق الآن',
-                  onPressed: () {},
-                ),
-              ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'عروض العيد',
+                    style: AppTextStyles.font13LightGreyRegular.copyWith(color: Colors.white),
+                  ),
+                  Spacer(),
+                  Text(
+                    'خصم 25%',
+                    style: AppTextStyles.font19BlackBold.copyWith(color: Colors.white),
+                  ),
+                  SizedBox(height: 7),
+                  FeaturedItemButton(
+                    title: 'تسوق الان',
+                    onPressed: () {},
+                  ),
+                  SizedBox(height: 4),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

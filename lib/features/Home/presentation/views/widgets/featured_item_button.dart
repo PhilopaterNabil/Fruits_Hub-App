@@ -12,9 +12,9 @@ class FeaturedItemButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.whiteColor,
-        minimumSize: Size(double.infinity, 54),
+        minimumSize: Size(116, 32),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(4),
         ),
       ),
       onPressed: onPressed,
