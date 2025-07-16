@@ -11,7 +11,7 @@ class BestSellingFruitsViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverPadding(
-          padding: EdgeInsets.only(right: 17, top: 24, bottom: 8),
+          padding: EdgeInsets.only(right: 16, top: 24, bottom: 8),
           sliver: SliverToBoxAdapter(
             child: Text(
               'الأكثر مبيعًا',
@@ -19,7 +19,10 @@ class BestSellingFruitsViewBody extends StatelessWidget {
             ),
           ),
         ),
-        BestSellingGridView(),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: BestSellingGridView(),
+        ),
       ],
     );
   }
