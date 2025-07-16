@@ -8,21 +8,19 @@ class BestSellingFruitsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: EdgeInsets.only(right: 17, top: 24, bottom: 8),
-            sliver: SliverToBoxAdapter(
-              child: Text(
-                'الأكثر مبيعًا',
-                style: AppTextStyles.font16WhiteBold.copyWith(color: AppColors.blackColor),
-              ),
+    return CustomScrollView(
+      slivers: [
+        SliverPadding(
+          padding: EdgeInsets.only(right: 17, top: 24, bottom: 8),
+          sliver: SliverToBoxAdapter(
+            child: Text(
+              'الأكثر مبيعًا',
+              style: AppTextStyles.font16WhiteBold.copyWith(color: AppColors.blackColor),
             ),
           ),
-          BestSellingGridView(),
-        ],
-      ),
+        ),
+        BestSellingGridView(),
+      ],
     );
   }
 }
