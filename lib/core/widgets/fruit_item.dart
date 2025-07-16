@@ -30,26 +30,29 @@ class FruitItem extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 Image.asset(AppImagesAssets.imagesWatermelonTest),
-                SizedBox(height: 24),
+                Spacer(),
                 ListTile(
                   title: Text(
                     'بطيخ',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  subtitle: Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: '20جنية',
-                          style: AppTextStyles.font13LightGreyBold
-                              .copyWith(color: AppColors.brightOrangeColor),
-                        ),
-                        TextSpan(
-                          text: ' / الكيلو',
-                          style: AppTextStyles.font13AccentGreenSemiBold
-                              .copyWith(color: AppColors.brightOrangeColor),
-                        )
-                      ],
+                  subtitle: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '20جنية',
+                            style: AppTextStyles.font13LightGreyBold
+                                .copyWith(color: AppColors.brightOrangeColor),
+                          ),
+                          TextSpan(
+                            text: ' / الكيلو',
+                            style: AppTextStyles.font13AccentGreenSemiBold
+                                .copyWith(color: AppColors.brightOrangeColor),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   trailing: CircleAvatar(
@@ -60,7 +63,8 @@ class FruitItem extends StatelessWidget {
                       color: AppColors.whiteColor,
                     ),
                   ),
-                )
+                ),
+                SizedBox(height: 19),
               ],
             ),
           ),
