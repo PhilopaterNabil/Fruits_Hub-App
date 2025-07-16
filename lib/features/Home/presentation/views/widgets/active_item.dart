@@ -10,31 +10,29 @@ class ActiveItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.only(left: 7),
-        decoration: BoxDecoration(
-          color: AppColors.lightPlatinumGreyColor,
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Row(
-          children: [
-            Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                color: AppColors.greenColor,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Center(child: SvgPicture.asset(iconPath)),
+    return Container(
+      padding: const EdgeInsets.only(left: 7),
+      decoration: BoxDecoration(
+        color: AppColors.lightPlatinumGreyColor,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              color: AppColors.greenColor,
+              borderRadius: BorderRadius.circular(30),
             ),
-            SizedBox(width: 4),
-            Text(
-              title,
-              style: AppTextStyles.font11BlackSemiBold.copyWith(color: AppColors.greenColor),
-            ),
-          ],
-        ),
+            child: Center(child: SvgPicture.asset(iconPath)),
+          ),
+          SizedBox(width: 4),
+          Text(
+            title,
+            style: AppTextStyles.font11BlackSemiBold.copyWith(color: AppColors.greenColor),
+          ),
+        ],
       ),
     );
   }
