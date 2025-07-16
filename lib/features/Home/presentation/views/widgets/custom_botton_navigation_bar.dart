@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/app_images_assets.dart';
+import 'package:fruits_hub/features/Home/domain/entites/bottom_navigation_bar_entity.dart';
+import 'package:fruits_hub/features/Home/presentation/views/widgets/navigation_bar_item.dart';
 
-class CustomBottonNavigationBar extends StatelessWidget {
+class CustomBottonNavigationBar extends StatefulWidget {
   const CustomBottonNavigationBar({super.key});
+
+  @override
+  State<CustomBottonNavigationBar> createState() => _CustomBottonNavigationBarState();
+}
+
+class _CustomBottonNavigationBarState extends State<CustomBottonNavigationBar> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,46 +37,25 @@ class CustomBottonNavigationBar extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          InActiveItem(iconPath: AppImagesAssets.imagesVuesaxOutlineHome),
-          InActiveItem(iconPath: AppImagesAssets.imagesVuesaxOutlineProducts),
-          InActiveItem(iconPath: AppImagesAssets.imagesVuesaxOutlineShoppingCart),
-          InActiveItem(iconPath: AppImagesAssets.imagesVuesaxOutlineUser),
-        ],
+        children: bottomNavigationBarItems.asMap().entries.map(
+          (entry) {
+            var index = entry.key;
+            var item = entry.value;
+
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: NavigationBarItem(
+                isActive: selectedIndex == index,
+                bottomNavigationBarEntity: item,
+              ),
+            );
+          },
+        ).toList(),
       ),
     );
-  }
-}
-
-class InActiveItem extends StatelessWidget {
-  const InActiveItem({super.key, required this.iconPath});
-
-  final String iconPath;
-
-  @override
-  Widget build(BuildContext context) {
-    return SvgPicture.asset(iconPath);
-  }
-}
-
-class ActiveItem extends StatelessWidget {
-  const ActiveItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class NavigationBarItem extends StatelessWidget {
-  const NavigationBarItem({super.key, this.isActive = false});
-
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return isActive
-        ? const ActiveItem()
-        : InActiveItem(iconPath: AppImagesAssets.imagesVuesaxOutlineHome);
   }
 }
