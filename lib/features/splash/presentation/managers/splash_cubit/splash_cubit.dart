@@ -16,6 +16,11 @@ class SplashCubit extends Cubit<SplashState> {
     await Future.delayed(const Duration(seconds: 2));
     FlutterNativeSplash.remove();
     final seen = await _repo.isOnBoardingSeen();
-    emit(SplashState.navigateTo(seen ? Routes.loginScreen : Routes.onBoardingScreen));
+    final isLoggedIn = _repo.isUserLoggedIn();
+
+    final nextRoute =
+        seen ? (isLoggedIn ? Routes.homeScreen : Routes.loginScreen) : Routes.onBoardingScreen;
+
+    emit(SplashState.navigateTo(nextRoute));
   }
 }

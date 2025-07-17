@@ -1,3 +1,4 @@
+import 'package:fruits_hub/core/services/firebase_auth_service.dart';
 import 'package:fruits_hub/core/services/shared_preferences_singleton.dart';
 import 'package:fruits_hub/core/utils/constants.dart';
 import 'package:fruits_hub/features/splash/data/repos/splash_repo.dart';
@@ -7,4 +8,7 @@ class SplashRepoImpl implements SplashRepo {
   Future<bool> isOnBoardingSeen() async {
     return SharedPreferencesSingleton.getBool(kIsOnBoardingViewSeen);
   }
+
+  @override
+  bool isUserLoggedIn() => FirebaseAuthService().isUserLoggedIn;
 }
