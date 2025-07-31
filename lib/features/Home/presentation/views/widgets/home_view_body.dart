@@ -5,8 +5,19 @@ import 'package:fruits_hub/features/Home/presentation/views/widgets/best_selling
 import 'package:fruits_hub/features/Home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/featured_list.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  // @override
+  // void initState() {
+  //   context.read<ProductsCubit>().getBestSellingProducts();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +40,7 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          BestSellingGridView(),
+          BestSellingGridViewBlocBuilder(),
         ],
       ),
     );

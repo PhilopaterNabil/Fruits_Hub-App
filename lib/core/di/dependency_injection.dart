@@ -1,3 +1,6 @@
+import 'package:fruits_hub/core/cubits/products_cubit/products_cubit.dart';
+import 'package:fruits_hub/core/repos/products_repo/products_repo.dart';
+import 'package:fruits_hub/core/repos/products_repo/products_repo_impl.dart';
 import 'package:fruits_hub/core/services/database_service.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
 import 'package:fruits_hub/core/services/firestore_service.dart';
@@ -37,6 +40,10 @@ Future<void> setupGetIt() async {
   // getIt.registerLazySingleton<AuthRepo>(
   //     () => AuthRepoImpl(firebaseAuthService: getIt<FirebaseAuthService>()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
+
+  // products
+  getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepoImpl(databaseService: getIt<DatabaseService>()));
+  getIt.registerFactory<ProductsCubit>(() => ProductsCubit(getIt()));
 
   // // home
   // getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));

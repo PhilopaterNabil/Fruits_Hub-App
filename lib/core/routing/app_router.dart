@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/di/dependency_injection.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
-import 'package:fruits_hub/features/Home/presentation/views/home_view.dart';
+import 'package:fruits_hub/features/Home/presentation/views/main_view.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
@@ -43,7 +43,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.homeScreen,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) => const MainView(),
       ),
       GoRoute(
         path: Routes.bestSellingFruitsScreen,
