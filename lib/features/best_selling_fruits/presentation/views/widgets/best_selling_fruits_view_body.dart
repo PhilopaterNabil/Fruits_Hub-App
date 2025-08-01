@@ -21,7 +21,9 @@ class BestSellingFruitsViewBody extends StatelessWidget {
         ),
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          sliver: BestSellingGridView(),
+          sliver: BestSellingGridView(
+            products: [], // Assuming products will be passed from a parent widget or fetched from a service
+          ),
         ),
       ],
     );
