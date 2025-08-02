@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:fruits_hub/core/entities/product_entity.dart';
 
 ProductEntity getDummyProduct() {
@@ -8,7 +6,6 @@ ProductEntity getDummyProduct() {
     code: 'AP123',
     description: 'A delicious red apple fresh from the orchard.',
     price: 1.99,
-    image: File('path/to/dummy_image.png'),
     isFeatured: true,
     imageUrl: 'https://example.com/dummy_image.png',
     expirationsMonths: 12,

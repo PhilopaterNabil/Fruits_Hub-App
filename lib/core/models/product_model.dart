@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:fruits_hub/core/entities/product_entity.dart';
+import 'package:fruits_hub/core/helper/get_avg_rating.dart';
 import 'package:fruits_hub/core/models/review_model.dart';
 
 class ProductModel {
@@ -8,13 +7,12 @@ class ProductModel {
   final String code;
   final String description;
   final num price;
-  final File image;
   final bool isFeatured;
   String? imageUrl;
   final int expirationsMonths;
   bool isOrganic;
   final int numberOfCalories;
-  final num avgRating = 0;
+  final num avgRating;
   final num ratingCount = 0;
   final int unitAmount;
   final num sellingCount;
@@ -25,12 +23,12 @@ class ProductModel {
     required this.code,
     required this.description,
     required this.price,
-    required this.image,
     required this.isFeatured,
     this.imageUrl,
     required this.expirationsMonths,
     this.isOrganic = false,
     required this.numberOfCalories,
+    required this.avgRating,
     required this.unitAmount,
     this.sellingCount = 0,
     required this.reviews,
@@ -42,12 +40,12 @@ class ProductModel {
       code: json['code'],
       description: json['description'],
       price: json['price'],
-      image: File(json['imageUrl']),
       isFeatured: json['isFeatured'] ?? false,
       imageUrl: json['imageUrl'],
       expirationsMonths: json['expirationsMonths'] ?? 0,
       isOrganic: json['isOrganic'] ?? false,
       numberOfCalories: json['numberOfCalories'] ?? 0,
+      avgRating: getAvgRating(json['reviews']),
       unitAmount: json['unitAmount'] ?? 0,
       sellingCount: json['sellingCount'] ?? 0,
       reviews: (json['reviews'] != null)
@@ -62,7 +60,6 @@ class ProductModel {
       code: code,
       description: description,
       price: price,
-      image: image,
       isFeatured: isFeatured,
       imageUrl: imageUrl,
       expirationsMonths: expirationsMonths,
