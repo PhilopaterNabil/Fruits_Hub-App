@@ -4,7 +4,9 @@ import 'package:fruits_hub/features/Home/domain/entites/bottom_navigation_bar_en
 import 'package:fruits_hub/features/Home/presentation/views/widgets/navigation_bar_item.dart';
 
 class CustomBottonNavigationBar extends StatefulWidget {
-  const CustomBottonNavigationBar({super.key});
+  const CustomBottonNavigationBar({super.key, this.onItemTapped});
+
+  final Function(int)? onItemTapped;
 
   @override
   State<CustomBottonNavigationBar> createState() => _CustomBottonNavigationBarState();
@@ -36,25 +38,37 @@ class _CustomBottonNavigationBarState extends State<CustomBottonNavigationBar> {
         ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: bottomNavigationBarItems.asMap().entries.map(
-          (entry) {
-            var index = entry.key;
-            var item = entry.value;
+        children: List.generate(
+          bottomNavigationBarItems.length,
+          (index) {
+            final item = bottomNavigationBarItems[index];
+            final isFirst = index == 0;
+            final isLast = index == bottomNavigationBarItems.length - 1;
 
-            return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              child: NavigationBarItem(
-                isActive: selectedIndex == index,
-                bottomNavigationBarEntity: item,
+            return Expanded(
+              flex: selectedIndex == index ? 3 : 2,
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: isFirst ? 16 : 8,
+                  end: isLast ? 16 : 8,
+                ),
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = index;
+                      widget.onItemTapped?.call(index);
+                    });
+                  },
+                  child: NavigationBarItem(
+                    isActive: selectedIndex == index,
+                    bottomNavigationBarEntity: item,
+                  ),
+                ),
               ),
             );
           },
-        ).toList(),
+        ),
       ),
     );
   }
