@@ -23,7 +23,7 @@ class ProductsRepoImpl extends ProductsRepo {
 
       return Right(products);
     } catch (e) {
-      return Left(ServerFailure('Failed to fetch products: $e'));
+      return Left(ServerFailure('Failed to fetch all products: $e'));
     }
   }
 
@@ -45,7 +45,7 @@ class ProductsRepoImpl extends ProductsRepo {
 
       return Right(products);
     } catch (e) {
-      return Left(ServerFailure('Failed to fetch products: $e'));
+      return Left(ServerFailure('Failed to fetch best selling products: $e'));
     }
   }
 }

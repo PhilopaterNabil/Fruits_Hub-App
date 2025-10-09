@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/cubits/products_cubit/products_cubit.dart';
 import 'package:fruits_hub/core/entities/product_entity.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_network_image.dart';
 
-class FruitItem extends StatelessWidget {
+class FruitItem extends StatefulWidget {
   const FruitItem({super.key, required this.productEntity});
 
   final ProductEntity productEntity;
+
+  @override
+  State<FruitItem> createState() => _FruitItemState();
+}
+
+class _FruitItemState extends State<FruitItem> {
+  @override
+  initState() {
+    context.read<ProductsCubit>().getProducts();
+    
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,24 +46,23 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                productEntity.imageUrl == null
+                widget.productEntity.imageUrl == null
                     ? SizedBox(
                         height: 100,
                         width: 100,
-                        child: Center(
-                          child: Text(
-                            'No Image Available',
-                            style: AppTextStyles.font13LightGreyBold,
-                          ),
+                        child: Container(
+                          color: AppColors.lightGreyColor,
+                          width: 100,
+                          height: 100,
                         ),
                       )
                     : Flexible(
-                        child: CustomNetworImage(imageUrl: productEntity.imageUrl!),
+                        child: CustomNetworkImage(imageUrl: widget.productEntity.imageUrl!),
                       ),
                 Spacer(),
                 ListTile(
                   title: Text(
-                    productEntity.name,
+                    widget.productEntity.name,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   subtitle: FittedBox(
@@ -58,7 +71,7 @@ class FruitItem extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: '${productEntity.price} جنيه',
+                            text: '${widget.productEntity.price} جنيه',
                             style: AppTextStyles.font13LightGreyBold
                                 .copyWith(color: AppColors.brightOrangeColor),
                           ),
