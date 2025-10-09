@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomNetworImage extends StatelessWidget {
-  const CustomNetworImage({super.key, required this.imageUrl});
+class CustomNetworkImage extends StatelessWidget {
+  const CustomNetworkImage({super.key, required this.imageUrl});
 
   final String imageUrl;
 

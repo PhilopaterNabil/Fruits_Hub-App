@@ -5,12 +5,14 @@ class AppColors {
   static const Color fogGreyColor = Color(0xFFF3F5F7);
   static const Color snowWhiteColor = Color(0xFFF9FAFA);
   static const Color paleMintColor = Color(0xFFEEF8ED);
+  static const Color mintFrostColor = Color(0xFFEBF9F1);
   static const Color lightPlatinumGreyColor = Color(0xFFEEEEEE);
   static const Color mistGreyColor = Color(0xFFE6E9EA);
   static const Color platinumGreyColor = Color(0xFFDDDFDF);
   static const Color silverGreyColor = Color(0xFFC9CECF);
   static const Color lightGreyColor = Color(0xFF949D9E);
   static const Color greyColor = Color(0xFF4E5556);
+  static const Color pastelOliveColor = Color(0xCACECE66);
   static const Color lightGreenColor = Color(0xFF5DB957);
   static const Color accentGreenColor = Color(0xFF2D9F5D);
   static const Color greenColor = Color(0xFF1B5E37);
