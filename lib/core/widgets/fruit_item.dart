@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/entities/product_entity.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_network_image.dart';
+import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
 
 class FruitItem extends StatefulWidget {
   const FruitItem({super.key, required this.productEntity});
@@ -19,7 +20,7 @@ class _FruitItemState extends State<FruitItem> {
   @override
   initState() {
     context.read<ProductsCubit>().getProducts();
-    
+
     super.initState();
   }
 
@@ -84,12 +85,15 @@ class _FruitItemState extends State<FruitItem> {
                       ),
                     ),
                   ),
-                  trailing: CircleAvatar(
-                    radius: 18,
-                    backgroundColor: AppColors.greenColor,
-                    child: Icon(
-                      Icons.add,
-                      color: AppColors.whiteColor,
+                  trailing: GestureDetector(
+                    onTap: () => context.read<CartCubit>().addProductToCart(widget.productEntity),
+                    child: CircleAvatar(
+                      radius: 18,
+                      backgroundColor: AppColors.greenColor,
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.whiteColor,
+                      ),
                     ),
                   ),
                 ),

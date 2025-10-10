@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/di/dependency_injection.dart';
+import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/Home/presentation/views/cart_view.dart';
 import 'package:fruits_hub/features/Home/presentation/views/products_view.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/custom_botton_navigation_bar.dart';
@@ -16,23 +19,26 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CustomBottonNavigationBar(
-        onItemTapped: (index) {
-          setState(() {
-            currentViewIndex = index;
-          });
-        },
-      ),
-      body: SafeArea(
-        child: IndexedStack(
-          index: currentViewIndex,
-          children: const [
-            HomeView(),
-            ProductsView(),
-            CartView(),
-            Center(child: Text('Profile View')),
-          ],
+    return BlocProvider(
+      create: (context) => getIt<CartCubit>(),
+      child: Scaffold(
+        bottomNavigationBar: CustomBottonNavigationBar(
+          onItemTapped: (index) {
+            setState(() {
+              currentViewIndex = index;
+            });
+          },
+        ),
+        body: SafeArea(
+          child: IndexedStack(
+            index: currentViewIndex,
+            children: const [
+              HomeView(),
+              ProductsView(),
+              CartView(),
+              Center(child: Text('Profile View')),
+            ],
+          ),
         ),
       ),
     );

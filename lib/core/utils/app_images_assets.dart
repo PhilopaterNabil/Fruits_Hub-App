@@ -48,8 +48,7 @@ class AppImagesAssets {
 
   /// Assets for imagesPageViewItem1BackgroundImage
   /// assets/images/page_view_item1_background_image.svg
-  static const String imagesPageViewItem1BackgroundImage =
-      "assets/images/page_view_item1_background_image.svg";
+  static const String imagesPageViewItem1BackgroundImage = "assets/images/page_view_item1_background_image.svg";
 
   /// Assets for imagesPageViewItem1Image
   /// assets/images/page_view_item1_image.svg
@@ -57,8 +56,7 @@ class AppImagesAssets {
 
   /// Assets for imagesPageViewItem2BackgroundImage
   /// assets/images/page_view_item2_background_image.svg
-  static const String imagesPageViewItem2BackgroundImage =
-      "assets/images/page_view_item2_background_image.svg";
+  static const String imagesPageViewItem2BackgroundImage = "assets/images/page_view_item2_background_image.svg";
 
   /// Assets for imagesPageViewItem2Image
   /// assets/images/page_view_item2_image.svg
@@ -88,6 +86,10 @@ class AppImagesAssets {
   /// assets/images/splash_view_android_12.png
   static const String imagesSplashViewAndroid12 = "assets/images/splash_view_android_12.png";
 
+  /// Assets for imagesTrash
+  /// assets/images/trash.svg
+  static const String imagesTrash = "assets/images/trash.svg";
+
   /// Assets for imagesVuesaxBoldHome
   /// assets/images/vuesax/bold/home.svg
   static const String imagesVuesaxBoldHome = "assets/images/vuesax/bold/home.svg";
@@ -114,8 +116,7 @@ class AppImagesAssets {
 
   /// Assets for imagesVuesaxOutlineShoppingCart
   /// assets/images/vuesax/outline/shopping-cart.svg
-  static const String imagesVuesaxOutlineShoppingCart =
-      "assets/images/vuesax/outline/shopping-cart.svg";
+  static const String imagesVuesaxOutlineShoppingCart = "assets/images/vuesax/outline/shopping-cart.svg";
 
   /// Assets for imagesVuesaxOutlineUser
   /// assets/images/vuesax/outline/user.svg
