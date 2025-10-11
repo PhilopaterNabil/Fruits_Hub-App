@@ -22,8 +22,8 @@ mixin _$CartState {
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,8 +33,8 @@ mixin _$CartState {
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) =>
       throw _privateConstructorUsedError;
@@ -44,8 +44,8 @@ mixin _$CartState {
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) =>
@@ -56,8 +56,8 @@ mixin _$CartState {
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,8 +67,8 @@ mixin _$CartState {
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) =>
       throw _privateConstructorUsedError;
@@ -78,8 +78,8 @@ mixin _$CartState {
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) =>
@@ -159,8 +159,8 @@ class _$InitialCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
     return initial();
@@ -173,8 +173,8 @@ class _$InitialCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
     return initial?.call();
@@ -187,8 +187,8 @@ class _$InitialCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
@@ -205,8 +205,8 @@ class _$InitialCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
     return initial(this);
@@ -219,8 +219,8 @@ class _$InitialCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
     return initial?.call(this);
@@ -233,8 +233,8 @@ class _$InitialCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {
@@ -302,8 +302,8 @@ class _$LoadingCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
     return loading();
@@ -316,8 +316,8 @@ class _$LoadingCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
     return loading?.call();
@@ -330,8 +330,8 @@ class _$LoadingCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
@@ -348,8 +348,8 @@ class _$LoadingCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
     return loading(this);
@@ -362,8 +362,8 @@ class _$LoadingCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
     return loading?.call(this);
@@ -376,8 +376,8 @@ class _$LoadingCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {
@@ -483,8 +483,8 @@ class _$SuccessCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
     return success(cartItems);
@@ -497,8 +497,8 @@ class _$SuccessCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
     return success?.call(cartItems);
@@ -511,8 +511,8 @@ class _$SuccessCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
@@ -529,8 +529,8 @@ class _$SuccessCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
     return success(this);
@@ -543,8 +543,8 @@ class _$SuccessCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
     return success?.call(this);
@@ -557,8 +557,8 @@ class _$SuccessCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {
@@ -666,8 +666,8 @@ class _$FailureCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
     return failure(errorMessage);
@@ -680,8 +680,8 @@ class _$FailureCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
     return failure?.call(errorMessage);
@@ -694,8 +694,8 @@ class _$FailureCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
@@ -712,8 +712,8 @@ class _$FailureCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
     return failure(this);
@@ -726,8 +726,8 @@ class _$FailureCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
     return failure?.call(this);
@@ -740,8 +740,8 @@ class _$FailureCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {
@@ -766,18 +766,19 @@ abstract class FailureCartState implements CartState {
 }
 
 /// @nodoc
-abstract class _$$AddedToCartStateImplCopyWith<$Res> {
-  factory _$$AddedToCartStateImplCopyWith(_$AddedToCartStateImpl value,
-          $Res Function(_$AddedToCartStateImpl) then) =
-      __$$AddedToCartStateImplCopyWithImpl<$Res>;
+abstract class _$$CartProductAddedStateImplCopyWith<$Res> {
+  factory _$$CartProductAddedStateImplCopyWith(
+          _$CartProductAddedStateImpl value,
+          $Res Function(_$CartProductAddedStateImpl) then) =
+      __$$CartProductAddedStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AddedToCartStateImplCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res, _$AddedToCartStateImpl>
-    implements _$$AddedToCartStateImplCopyWith<$Res> {
-  __$$AddedToCartStateImplCopyWithImpl(_$AddedToCartStateImpl _value,
-      $Res Function(_$AddedToCartStateImpl) _then)
+class __$$CartProductAddedStateImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartProductAddedStateImpl>
+    implements _$$CartProductAddedStateImplCopyWith<$Res> {
+  __$$CartProductAddedStateImplCopyWithImpl(_$CartProductAddedStateImpl _value,
+      $Res Function(_$CartProductAddedStateImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of CartState
@@ -786,170 +787,27 @@ class __$$AddedToCartStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddedToCartStateImpl
+class _$CartProductAddedStateImpl
     with DiagnosticableTreeMixin
-    implements AddedToCartState {
-  const _$AddedToCartStateImpl();
+    implements CartProductAddedState {
+  const _$CartProductAddedStateImpl();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CartState.addedToCart()';
+    return 'CartState.cartProductAdded()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CartState.addedToCart'));
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddedToCartStateImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<CartItemEntity> cartItems) success,
-    required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
-    required TResult Function() updatedCart,
-  }) {
-    return addedToCart();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(List<CartItemEntity> cartItems)? success,
-    TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
-    TResult? Function()? updatedCart,
-  }) {
-    return addedToCart?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<CartItemEntity> cartItems)? success,
-    TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
-    TResult Function()? updatedCart,
-    required TResult orElse(),
-  }) {
-    if (addedToCart != null) {
-      return addedToCart();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitialCartState value) initial,
-    required TResult Function(LoadingCartState value) loading,
-    required TResult Function(SuccessCartState value) success,
-    required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
-    required TResult Function(UpdatedCartState value) updatedCart,
-  }) {
-    return addedToCart(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_InitialCartState value)? initial,
-    TResult? Function(LoadingCartState value)? loading,
-    TResult? Function(SuccessCartState value)? success,
-    TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
-    TResult? Function(UpdatedCartState value)? updatedCart,
-  }) {
-    return addedToCart?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitialCartState value)? initial,
-    TResult Function(LoadingCartState value)? loading,
-    TResult Function(SuccessCartState value)? success,
-    TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
-    TResult Function(UpdatedCartState value)? updatedCart,
-    required TResult orElse(),
-  }) {
-    if (addedToCart != null) {
-      return addedToCart(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AddedToCartState implements CartState {
-  const factory AddedToCartState() = _$AddedToCartStateImpl;
-}
-
-/// @nodoc
-abstract class _$$RemovedFromCartStateImplCopyWith<$Res> {
-  factory _$$RemovedFromCartStateImplCopyWith(_$RemovedFromCartStateImpl value,
-          $Res Function(_$RemovedFromCartStateImpl) then) =
-      __$$RemovedFromCartStateImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RemovedFromCartStateImplCopyWithImpl<$Res>
-    extends _$CartStateCopyWithImpl<$Res, _$RemovedFromCartStateImpl>
-    implements _$$RemovedFromCartStateImplCopyWith<$Res> {
-  __$$RemovedFromCartStateImplCopyWithImpl(_$RemovedFromCartStateImpl _value,
-      $Res Function(_$RemovedFromCartStateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$RemovedFromCartStateImpl
-    with DiagnosticableTreeMixin
-    implements RemovedFromCartState {
-  const _$RemovedFromCartStateImpl();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CartState.removedFromCart()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'CartState.removedFromCart'));
+    properties..add(DiagnosticsProperty('type', 'CartState.cartProductAdded'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RemovedFromCartStateImpl);
+            other is _$CartProductAddedStateImpl);
   }
 
   @override
@@ -962,11 +820,11 @@ class _$RemovedFromCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
-    return removedFromCart();
+    return cartProductAdded();
   }
 
   @override
@@ -976,11 +834,11 @@ class _$RemovedFromCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
-    return removedFromCart?.call();
+    return cartProductAdded?.call();
   }
 
   @override
@@ -990,13 +848,13 @@ class _$RemovedFromCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
-    if (removedFromCart != null) {
-      return removedFromCart();
+    if (cartProductAdded != null) {
+      return cartProductAdded();
     }
     return orElse();
   }
@@ -1008,11 +866,11 @@ class _$RemovedFromCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
-    return removedFromCart(this);
+    return cartProductAdded(this);
   }
 
   @override
@@ -1022,11 +880,11 @@ class _$RemovedFromCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
-    return removedFromCart?.call(this);
+    return cartProductAdded?.call(this);
   }
 
   @override
@@ -1036,20 +894,167 @@ class _$RemovedFromCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {
-    if (removedFromCart != null) {
-      return removedFromCart(this);
+    if (cartProductAdded != null) {
+      return cartProductAdded(this);
     }
     return orElse();
   }
 }
 
-abstract class RemovedFromCartState implements CartState {
-  const factory RemovedFromCartState() = _$RemovedFromCartStateImpl;
+abstract class CartProductAddedState implements CartState {
+  const factory CartProductAddedState() = _$CartProductAddedStateImpl;
+}
+
+/// @nodoc
+abstract class _$$CartProductRemovedStateImplCopyWith<$Res> {
+  factory _$$CartProductRemovedStateImplCopyWith(
+          _$CartProductRemovedStateImpl value,
+          $Res Function(_$CartProductRemovedStateImpl) then) =
+      __$$CartProductRemovedStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CartProductRemovedStateImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$CartProductRemovedStateImpl>
+    implements _$$CartProductRemovedStateImplCopyWith<$Res> {
+  __$$CartProductRemovedStateImplCopyWithImpl(
+      _$CartProductRemovedStateImpl _value,
+      $Res Function(_$CartProductRemovedStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CartState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CartProductRemovedStateImpl
+    with DiagnosticableTreeMixin
+    implements CartProductRemovedState {
+  const _$CartProductRemovedStateImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'CartState.cartProductRemoved()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CartState.cartProductRemoved'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CartProductRemovedStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<CartItemEntity> cartItems) success,
+    required TResult Function(String errorMessage) failure,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
+    required TResult Function() updatedCart,
+  }) {
+    return cartProductRemoved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<CartItemEntity> cartItems)? success,
+    TResult? Function(String errorMessage)? failure,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
+    TResult? Function()? updatedCart,
+  }) {
+    return cartProductRemoved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<CartItemEntity> cartItems)? success,
+    TResult Function(String errorMessage)? failure,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
+    TResult Function()? updatedCart,
+    required TResult orElse(),
+  }) {
+    if (cartProductRemoved != null) {
+      return cartProductRemoved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCartState value) initial,
+    required TResult Function(LoadingCartState value) loading,
+    required TResult Function(SuccessCartState value) success,
+    required TResult Function(FailureCartState value) failure,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
+    required TResult Function(UpdatedCartState value) updatedCart,
+  }) {
+    return cartProductRemoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCartState value)? initial,
+    TResult? Function(LoadingCartState value)? loading,
+    TResult? Function(SuccessCartState value)? success,
+    TResult? Function(FailureCartState value)? failure,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
+    TResult? Function(UpdatedCartState value)? updatedCart,
+  }) {
+    return cartProductRemoved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCartState value)? initial,
+    TResult Function(LoadingCartState value)? loading,
+    TResult Function(SuccessCartState value)? success,
+    TResult Function(FailureCartState value)? failure,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
+    TResult Function(UpdatedCartState value)? updatedCart,
+    required TResult orElse(),
+  }) {
+    if (cartProductRemoved != null) {
+      return cartProductRemoved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CartProductRemovedState implements CartState {
+  const factory CartProductRemovedState() = _$CartProductRemovedStateImpl;
 }
 
 /// @nodoc
@@ -1105,8 +1110,8 @@ class _$UpdatedCartStateImpl
     required TResult Function() loading,
     required TResult Function(List<CartItemEntity> cartItems) success,
     required TResult Function(String errorMessage) failure,
-    required TResult Function() addedToCart,
-    required TResult Function() removedFromCart,
+    required TResult Function() cartProductAdded,
+    required TResult Function() cartProductRemoved,
     required TResult Function() updatedCart,
   }) {
     return updatedCart();
@@ -1119,8 +1124,8 @@ class _$UpdatedCartStateImpl
     TResult? Function()? loading,
     TResult? Function(List<CartItemEntity> cartItems)? success,
     TResult? Function(String errorMessage)? failure,
-    TResult? Function()? addedToCart,
-    TResult? Function()? removedFromCart,
+    TResult? Function()? cartProductAdded,
+    TResult? Function()? cartProductRemoved,
     TResult? Function()? updatedCart,
   }) {
     return updatedCart?.call();
@@ -1133,8 +1138,8 @@ class _$UpdatedCartStateImpl
     TResult Function()? loading,
     TResult Function(List<CartItemEntity> cartItems)? success,
     TResult Function(String errorMessage)? failure,
-    TResult Function()? addedToCart,
-    TResult Function()? removedFromCart,
+    TResult Function()? cartProductAdded,
+    TResult Function()? cartProductRemoved,
     TResult Function()? updatedCart,
     required TResult orElse(),
   }) {
@@ -1151,8 +1156,8 @@ class _$UpdatedCartStateImpl
     required TResult Function(LoadingCartState value) loading,
     required TResult Function(SuccessCartState value) success,
     required TResult Function(FailureCartState value) failure,
-    required TResult Function(AddedToCartState value) addedToCart,
-    required TResult Function(RemovedFromCartState value) removedFromCart,
+    required TResult Function(CartProductAddedState value) cartProductAdded,
+    required TResult Function(CartProductRemovedState value) cartProductRemoved,
     required TResult Function(UpdatedCartState value) updatedCart,
   }) {
     return updatedCart(this);
@@ -1165,8 +1170,8 @@ class _$UpdatedCartStateImpl
     TResult? Function(LoadingCartState value)? loading,
     TResult? Function(SuccessCartState value)? success,
     TResult? Function(FailureCartState value)? failure,
-    TResult? Function(AddedToCartState value)? addedToCart,
-    TResult? Function(RemovedFromCartState value)? removedFromCart,
+    TResult? Function(CartProductAddedState value)? cartProductAdded,
+    TResult? Function(CartProductRemovedState value)? cartProductRemoved,
     TResult? Function(UpdatedCartState value)? updatedCart,
   }) {
     return updatedCart?.call(this);
@@ -1179,8 +1184,8 @@ class _$UpdatedCartStateImpl
     TResult Function(LoadingCartState value)? loading,
     TResult Function(SuccessCartState value)? success,
     TResult Function(FailureCartState value)? failure,
-    TResult Function(AddedToCartState value)? addedToCart,
-    TResult Function(RemovedFromCartState value)? removedFromCart,
+    TResult Function(CartProductAddedState value)? cartProductAdded,
+    TResult Function(CartProductRemovedState value)? cartProductRemoved,
     TResult Function(UpdatedCartState value)? updatedCart,
     required TResult orElse(),
   }) {

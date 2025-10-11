@@ -25,14 +25,14 @@ class CartCubit extends Cubit<CartState> {
       _addNewProductToCart(productEntity);
     }
 
-    emit(CartState.addedToCart());
+    emit(CartState.cartProductAdded());
   }
 
   void _addNewProductToCart(ProductEntity productEntity) {
     CartItemEntity cartItemEntity = CartItemEntity(productEntity: productEntity, count: 1);
 
     cartEntity.addCartItem(cartItemEntity);
-    emit(CartState.addedToCart());
+    emit(CartState.cartProductAdded());
   }
 
   // void _updateProductInCart(ProductEntity productEntity) {
@@ -47,6 +47,6 @@ class CartCubit extends Cubit<CartState> {
 
   void removeProductFromCart(ProductEntity productEntity) {
     cartEntity.cartItems.removeWhere((item) => item.productEntity == productEntity);
-    emit(CartState.removedFromCart());
+    emit(CartState.cartProductRemoved());
   }
 }

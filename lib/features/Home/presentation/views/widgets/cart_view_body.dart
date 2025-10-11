@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/cart_header.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/cart_items_list.dart';
 
@@ -54,7 +56,7 @@ class CartViewBody extends StatelessWidget {
           bottom: 16,
           child: CustomButton(
             onPressed: () {},
-            title: 'الدفع  120جنيه',
+            title: 'الدفع  ${context.watch<CartCubit>().cartEntity.totalPrice} جنيه',
           ),
         ),
       ],
