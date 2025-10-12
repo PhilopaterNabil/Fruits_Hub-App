@@ -58,7 +58,7 @@ class CartItem extends StatelessWidget {
                       .copyWith(color: AppColors.brightOrangeColor),
                 ),
                 Spacer(flex: 2),
-                CartItemActionButtons(),
+                CartItemActionButtons(cartItemEntity: cartItemEntity),
                 SizedBox(height: 8),
               ],
             ),
