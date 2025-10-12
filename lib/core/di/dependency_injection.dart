@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/services/database_service.dart';
 import 'package:fruits_hub/core/services/firebase_auth_service.dart';
 import 'package:fruits_hub/core/services/firestore_service.dart';
 import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
+import 'package:fruits_hub/features/Home/presentation/managers/cart_item_cubit/cart_item_cubit.dart';
 import 'package:fruits_hub/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
@@ -48,4 +49,7 @@ Future<void> setupGetIt() async {
 
   // cart
   getIt.registerFactory<CartCubit>(() => CartCubit());
+
+  // cart item
+  getIt.registerFactory<CartItemCubit>(() => CartItemCubit());
 }
