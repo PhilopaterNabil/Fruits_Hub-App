@@ -46,7 +46,7 @@ class CartViewBody extends StatelessWidget {
               //     ],
               //   ),
               // ),
-              CartItemsList(cartItems: []),
+              CartItemsList(cartItems: context.watch<CartCubit>().cartEntity.cartItems),
             ],
           ),
         ),

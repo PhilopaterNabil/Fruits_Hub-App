@@ -23,7 +23,9 @@ class ProductsViewBody extends StatelessWidget {
                 isNotificationEnabled: true,
               ),
               SizedBox(height: 16),
-              SearchTextField(),
+              SearchTextField(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+              ),
               SizedBox(height: 12),
               ProductsViewHeaders(productsLength: context.read<ProductsCubit>().productsLength),
               SizedBox(height: 8),

@@ -5,12 +5,14 @@ import 'package:fruits_hub/core/utils/app_images_assets.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+  const SearchTextField({super.key, this.padding});
+
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: padding,
       decoration: BoxDecoration(boxShadow: [
         BoxShadow(
           color: AppColors.darkBlackColor.withOpacity(0.04),

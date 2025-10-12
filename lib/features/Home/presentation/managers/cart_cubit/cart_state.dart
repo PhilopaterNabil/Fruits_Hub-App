@@ -8,7 +8,7 @@ class CartState with _$CartState {
   const factory CartState.success({required List<CartItemEntity> cartItems}) = SuccessCartState;
   const factory CartState.failure({required String errorMessage}) = FailureCartState;
 
-  const factory CartState.cartProductAdded() = CartProductAddedState;
-  const factory CartState.cartProductRemoved() = CartProductRemovedState;
+  const factory CartState.cartItemAdded() = CartItemAddedState;
+  const factory CartState.cartItemRemoved() = CartItemRemovedState;
   const factory CartState.updatedCart() = UpdatedCartState;
 }

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/di/dependency_injection.dart';
 import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/custom_botton_navigation_bar.dart';
-import 'package:fruits_hub/features/Home/presentation/views/widgets/main_view_body_bloc_consumer.dart';
+import 'package:fruits_hub/features/Home/presentation/views/widgets/main_view_body_bloc_listener.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -28,7 +28,7 @@ class _MainViewState extends State<MainView> {
           },
         ),
         body: SafeArea(
-          child: MainViewBodyBlocConsumer(currentViewIndex: currentViewIndex),
+          child: MainViewBodyBlocListener(currentViewIndex: currentViewIndex),
         ),
       ),
     );
