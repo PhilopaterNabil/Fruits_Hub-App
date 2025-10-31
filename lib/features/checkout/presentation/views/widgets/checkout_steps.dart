@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/step_item.dart';
 
 class CheckoutSteps extends StatelessWidget {
-  const CheckoutSteps({super.key});
+  const CheckoutSteps({super.key, required this.currentPageIndex});
+
+  final int currentPageIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class CheckoutSteps extends StatelessWidget {
         checkoutStepsTitles.length,
         (index) => Expanded(
           child: StepItem(
-            isActive: index == 0,
+            isActive: index <= currentPageIndex,
             index: (index + 1).toString(),
             title: checkoutStepsTitles[index],
           ),
