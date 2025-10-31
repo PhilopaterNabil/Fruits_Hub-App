@@ -11,59 +11,64 @@ class ShippingItem extends StatelessWidget {
     required this.subTitle,
     required this.price,
     required this.isSelected,
+    required this.onTap,
   });
 
   final String title, subTitle, price;
   final bool isSelected;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 16.h),
-      decoration: BoxDecoration(
-        color: AppColors.translucentGreyColor.withOpacity(0.2),
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(
-          color: isSelected ? AppColors.greenColor : AppColors.translucentGreyColor,
-          width: 1.5.w,
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 16.h),
+        decoration: BoxDecoration(
+          color: AppColors.translucentGreyColor.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+            color: isSelected ? AppColors.greenColor : AppColors.translucentGreyColor,
+            width: 1.5.w,
+          ),
         ),
-      ),
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ActiveOrInActiveShippingItemDot(isSelected: isSelected),
-            SizedBox(width: 10.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTextStyles.font13AccentGreenSemiBold.copyWith(
-                    color: AppColors.darkBlackColor,
+        child: IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ActiveOrInActiveShippingItemDot(isSelected: isSelected),
+              SizedBox(width: 10.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextStyles.font13AccentGreenSemiBold.copyWith(
+                      color: AppColors.darkBlackColor,
+                    ),
                   ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  subTitle,
-                  style: AppTextStyles.font13LightGreyRegular.copyWith(
-                    color: AppColors.darkBlackColor.withOpacity(0.5),
+                  SizedBox(height: 6.h),
+                  Text(
+                    subTitle,
+                    style: AppTextStyles.font13LightGreyRegular.copyWith(
+                      color: AppColors.darkBlackColor.withOpacity(0.5),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Spacer(),
-            Center(
-              child: Text(
-                price == '0' ? 'مجاني' : '$price جنيه',
-                style: AppTextStyles.font13LightGreyBold.copyWith(
-                  color: AppColors.leafGreenColor,
+                ],
+              ),
+              Spacer(),
+              Center(
+                child: Text(
+                  price == '0' ? 'مجاني' : '$price جنيه',
+                  style: AppTextStyles.font13LightGreyBold.copyWith(
+                    color: AppColors.leafGreenColor,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(width: 9.w),
-          ],
+              SizedBox(width: 9.w),
+            ],
+          ),
         ),
       ),
     );

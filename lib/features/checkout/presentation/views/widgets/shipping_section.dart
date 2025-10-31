@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/shipping_item.dart';
 
-class ShippingSection extends StatelessWidget {
+class ShippingSection extends StatefulWidget {
   const ShippingSection({super.key});
+
+  @override
+  State<ShippingSection> createState() => _ShippingSectionState();
+}
+
+class _ShippingSectionState extends State<ShippingSection> {
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +18,27 @@ class ShippingSection extends StatelessWidget {
       children: [
         SizedBox(height: 32.h),
         ShippingItem(
+          isSelected: selectedIndex == 0,
           title: 'الدفع عند الاستلام',
           subTitle: 'التسليم من المكان',
           price: '40',
-          isSelected: true,
+          onTap: () {
+            setState(() {
+              selectedIndex = 0;
+            });
+          },
         ),
         SizedBox(height: 16.h),
         ShippingItem(
+          isSelected: selectedIndex == 1,
           title: 'الدفع الالكتروني',
           subTitle: 'يرجي تحديد طريقه الدفع',
           price: '40',
-          isSelected: false,
+          onTap: () {
+            setState(() {
+              selectedIndex = 1;
+            });
+          },
         ),
       ],
     );
