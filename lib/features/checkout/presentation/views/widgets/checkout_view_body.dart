@@ -1,16 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps.dart';
+import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps_page_view.dart';
 
-class CheckoutViewBody extends StatelessWidget {
+class CheckoutViewBody extends StatefulWidget {
   const CheckoutViewBody({super.key});
 
   @override
+  State<CheckoutViewBody> createState() => _CheckoutViewBodyState();
+}
+
+class _CheckoutViewBodyState extends State<CheckoutViewBody> {
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
+        children: [
+          SizedBox(height: 16.h),
           CheckoutSteps(),
+          Expanded(
+            child: CheckoutStepsPageView(),
+          ),
+          CustomButton(onPressed: () {}, title: 'التالي'),
+          SizedBox(height: 16.h),
         ],
       ),
     );
