@@ -28,5 +28,4 @@ List<String> checkoutStepsTitles = [
   'الشحن',
   'العنوان',
   'الدفع',
-  'المراجعه',
 ];
