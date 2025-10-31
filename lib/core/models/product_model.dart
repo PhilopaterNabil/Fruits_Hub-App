@@ -35,6 +35,11 @@ class ProductModel {
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
+    final reviewsRaw = json['reviews'];
+    final reviews = (reviewsRaw is List)
+        ? reviewsRaw.whereType<Map<String, dynamic>>().map((e) => ReviewModel.fromJson(e)).toList()
+        : <ReviewModel>[];
+
     return ProductModel(
       name: json['name'],
       code: json['code'],
@@ -45,12 +50,10 @@ class ProductModel {
       expirationsMonths: json['expirationsMonths'] ?? 0,
       isOrganic: json['isOrganic'] ?? false,
       numberOfCalories: json['numberOfCalories'] ?? 0,
-      avgRating: getAvgRating(json['reviews']),
+      avgRating: getAvgRating(reviews.map((r) => r.toEntity()).toList()),
       unitAmount: json['unitAmount'] ?? 0,
       sellingCount: json['sellingCount'] ?? 0,
-      reviews: (json['reviews'] != null)
-          ? List<ReviewModel>.from(json['reviews'].map((review) => ReviewModel.fromJson(review)))
-          : [],
+      reviews: reviews,
     );
   }
 

@@ -7,6 +7,7 @@ import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/sign
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:fruits_hub/features/best_selling_fruits/presentation/views/best_selling_fruits_view.dart';
+import 'package:fruits_hub/features/checkout/presentation/views/checkout_view.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
 import 'package:fruits_hub/features/splash/presentation/views/splash_view.dart';
@@ -44,6 +45,10 @@ abstract class AppRouter {
       GoRoute(
         path: Routes.homeScreen,
         builder: (context, state) => const MainView(),
+      ),
+      GoRoute(
+        path: Routes.checkoutScreen,
+        builder: (context, state) => const CheckoutView(),
       ),
       GoRoute(
         path: Routes.bestSellingFruitsScreen,

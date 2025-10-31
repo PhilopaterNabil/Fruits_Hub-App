@@ -7,6 +7,6 @@ num getAvgRating(List<ReviewEntity> reviews) {
   for (var review in reviews) {
     totalRating += review.ratting;
   }
-  
+
   return totalRating / reviews.length;
 }

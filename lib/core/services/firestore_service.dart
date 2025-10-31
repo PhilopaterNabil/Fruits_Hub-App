@@ -29,8 +29,8 @@ class FirestoreService implements DatabaseService {
 
       if (query != null) {
         if (query.containsKey('orderBy')) {
-          var orderByField = data.orderBy(query['orderBy']);
-          var descending = query['descending'];
+          var orderByField = query['orderBy'] as String;
+          var descending = query['descending'] as bool? ?? false;
           data = data.orderBy(orderByField, descending: descending);
         }
 
