@@ -14,6 +14,10 @@ class AppImagesAssets {
   /// assets/images/Check.svg
   static const String imagesCheck = "assets/images/Check.svg";
 
+  /// Assets for imagesEdit
+  /// assets/images/edit.svg
+  static const String imagesEdit = "assets/images/edit.svg";
+
   /// Assets for imagesFacebookIcon
   /// assets/images/facebook_icon.svg
   static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";
@@ -38,6 +42,10 @@ class AppImagesAssets {
   /// assets/images/google_icon.svg
   static const String imagesGoogleIcon = "assets/images/google_icon.svg";
 
+  /// Assets for imagesLocation
+  /// assets/images/location.svg
+  static const String imagesLocation = "assets/images/location.svg";
+
   /// Assets for imagesLogo
   /// assets/images/logo.svg
   static const String imagesLogo = "assets/images/logo.svg";
@@ -48,7 +56,8 @@ class AppImagesAssets {
 
   /// Assets for imagesPageViewItem1BackgroundImage
   /// assets/images/page_view_item1_background_image.svg
-  static const String imagesPageViewItem1BackgroundImage = "assets/images/page_view_item1_background_image.svg";
+  static const String imagesPageViewItem1BackgroundImage =
+      "assets/images/page_view_item1_background_image.svg";
 
   /// Assets for imagesPageViewItem1Image
   /// assets/images/page_view_item1_image.svg
@@ -56,7 +65,8 @@ class AppImagesAssets {
 
   /// Assets for imagesPageViewItem2BackgroundImage
   /// assets/images/page_view_item2_background_image.svg
-  static const String imagesPageViewItem2BackgroundImage = "assets/images/page_view_item2_background_image.svg";
+  static const String imagesPageViewItem2BackgroundImage =
+      "assets/images/page_view_item2_background_image.svg";
 
   /// Assets for imagesPageViewItem2Image
   /// assets/images/page_view_item2_image.svg
@@ -116,7 +126,8 @@ class AppImagesAssets {
 
   /// Assets for imagesVuesaxOutlineShoppingCart
   /// assets/images/vuesax/outline/shopping-cart.svg
-  static const String imagesVuesaxOutlineShoppingCart = "assets/images/vuesax/outline/shopping-cart.svg";
+  static const String imagesVuesaxOutlineShoppingCart =
+      "assets/images/vuesax/outline/shopping-cart.svg";
 
   /// Assets for imagesVuesaxOutlineUser
   /// assets/images/vuesax/outline/user.svg

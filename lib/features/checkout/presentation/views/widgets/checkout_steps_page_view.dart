@@ -26,7 +26,7 @@ class CheckoutStepsPageView extends StatelessWidget {
     return [
       ShippingSection(),
       AddressInputSection(),
-      PaymentSection(),
+      PaymentSection(pageController: pageController),
     ];
   }
 }
