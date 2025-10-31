@@ -4,11 +4,14 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class ActiveStepItem extends StatelessWidget {
-  const ActiveStepItem({super.key});
+  const ActiveStepItem({super.key, required this.title});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CircleAvatar(
           radius: 12.5.r,
@@ -21,7 +24,7 @@ class ActiveStepItem extends StatelessWidget {
         ),
         SizedBox(width: 8.w),
         Text(
-          'الشحن',
+          title,
           style: AppTextStyles.font13LightGreyBold.copyWith(color: AppColors.greenColor),
         )
       ],
