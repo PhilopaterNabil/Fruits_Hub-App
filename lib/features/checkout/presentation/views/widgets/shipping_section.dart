@@ -14,12 +14,14 @@ class ShippingSection extends StatelessWidget {
           title: 'الدفع عند الاستلام',
           subTitle: 'التسليم من المكان',
           price: '40',
+          isSelected: true,
         ),
         SizedBox(height: 16.h),
         ShippingItem(
           title: 'الدفع الالكتروني',
           subTitle: 'يرجي تحديد طريقه الدفع',
           price: '40',
+          isSelected: false,
         ),
       ],
     );
