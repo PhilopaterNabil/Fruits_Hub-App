@@ -14,11 +14,13 @@ class AppColors {
   static const Color lightGreyColor = Color(0xFF949D9E);
   static const Color ashGreyColor = Color(0xFF979899);
   static const Color neutralGreyColor = Color(0xFFAAAAAA);
+  static const Color translucentGreyColor = Color(0x33D9D9D9);
   static const Color greyColor = Color(0xFF4E5556);
   static const Color pastelOliveColor = Color(0xCACECE66);
   static const Color lightGreenColor = Color(0xFF5DB957);
   static const Color accentGreenColor = Color(0xFF2D9F5D);
   static const Color greenColor = Color(0xFF1B5E37);
+  static const Color leafGreenColor = Color(0xFF3A8B33);
   static const Color brightOrangeColor = Color(0xFFF4A91F);
   static const Color orangeColor = Color(0xFFEAA21E);
   static const Color blackColor = Color(0xFF0C0D0D);

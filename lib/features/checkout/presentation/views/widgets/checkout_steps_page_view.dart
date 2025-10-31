@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps.dart';
+import 'package:fruits_hub/features/checkout/presentation/views/widgets/shipping_section.dart';
 
 class CheckoutStepsPageView extends StatelessWidget {
-  const CheckoutStepsPageView({super.key});
+  const CheckoutStepsPageView({super.key, required this.pageController});
+
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      itemCount: checkoutStepsTitles.length,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) {
-        return Center(
-          child: Text(
-            'Step ${index + 1}',
-            style: TextStyle(fontSize: 24.sp),
-          ),
-        );
-      },
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.h),
+      child: PageView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
+        itemCount: getStepsPages().length,
+        itemBuilder: (context, index) => getStepsPages()[index],
+      ),
     );
+  }
+
+  List<Widget> getStepsPages() {
+    return [
+      ShippingSection(),
+      Center(child: Text('Address Step')),
+      Center(child: Text('Payment Step')),
+      Center(child: Text('Review Step')),
+    ];
   }
 }
