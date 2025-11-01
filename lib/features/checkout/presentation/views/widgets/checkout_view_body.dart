@@ -13,6 +13,8 @@ class CheckoutViewBody extends StatefulWidget {
 
 class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   late PageController pageController;
+  ValueNotifier<AutovalidateMode> autovalidateMode =
+      ValueNotifier<AutovalidateMode>(AutovalidateMode.disabled);
 
   @override
   void initState() {
@@ -28,6 +30,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   @override
   void dispose() {
     pageController.dispose();
+    autovalidateMode.dispose();
     super.dispose();
   }
 
@@ -40,12 +43,28 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
       child: Column(
         children: [
           SizedBox(height: 16.h),
-          CheckoutSteps(currentPageIndex: currentPageIndex, pageController: pageController),
+          CheckoutSteps(
+            currentPageIndex: currentPageIndex,
+            pageController: pageController,
+            formKey: _formKey,
+            autovalidateMode: autovalidateMode,
+          ),
           Expanded(
-            child: CheckoutStepsPageView(pageController: pageController, formKey: _formKey),
+            child: CheckoutStepsPageView(
+              pageController: pageController,
+              formKey: _formKey,
+              autovalidateMode: autovalidateMode,
+            ),
           ),
           CustomButton(
             onPressed: () {
+              if (currentPageIndex == 1) {
+                if (!_formKey.currentState!.validate()) {
+                  autovalidateMode.value = AutovalidateMode.always;
+                  return;
+                }
+                _formKey.currentState!.save();
+              }
               pageController.nextPage(
                 duration: Duration(milliseconds: 300),
                 curve: Curves.bounceIn,
