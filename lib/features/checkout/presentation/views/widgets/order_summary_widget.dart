@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/payment_item.dart';
 
 class OrderSummaryWidget extends StatelessWidget {
@@ -9,6 +11,10 @@ class OrderSummaryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    OrderEntity order = context.read<OrderEntity>();
+    num totalPrice = order.cartIentity.totalPrice;
+    double deliveryFee = (totalPrice * 1.1) - totalPrice;
+
     return PaymentItem(
       title: 'ملخص الطلب :',
       child: Padding(
@@ -25,7 +31,7 @@ class OrderSummaryWidget extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  '150 جنيه',
+                  '${context.read<OrderEntity>().cartIentity.totalPrice} جنيه',
                   style: AppTextStyles.font16GreySemiBold.copyWith(
                     color: AppColors.blackColor,
                   ),
@@ -43,7 +49,7 @@ class OrderSummaryWidget extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  '30 جنيه',
+                  '$deliveryFee جنيه',
                   style: AppTextStyles.font13AccentGreenSemiBold.copyWith(
                     color: AppColors.greyColor,
                   ),
@@ -68,7 +74,7 @@ class OrderSummaryWidget extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  '150 جنيه',
+                  '${totalPrice + deliveryFee} جنيه',
                   style: AppTextStyles.font16WhiteBold.copyWith(
                     color: AppColors.blackColor,
                   ),

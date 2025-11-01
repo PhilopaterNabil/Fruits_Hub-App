@@ -4,7 +4,6 @@ class ShippingAddressEntity {
   String? address;
   String? email;
   String? city;
-  String? addressDetails;
   String? floorNumber;
 
   ShippingAddressEntity({
@@ -13,7 +12,10 @@ class ShippingAddressEntity {
     this.address,
     this.email,
     this.city,
-    this.addressDetails,
     this.floorNumber,
   });
+
+  String get fullAddress {
+    return '$address, $city, مبنى رقم: $floorNumber';
+  }
 }

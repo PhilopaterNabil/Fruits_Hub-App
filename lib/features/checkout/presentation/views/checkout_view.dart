@@ -16,7 +16,7 @@ class CheckoutView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'الشحن'),
       body: Provider.value(
-        value: OrderEntity(cartItems: cartItems, shippingAddress: ShippingAddressEntity()),
+        value: OrderEntity(cartIentity: cartItems, shippingAddress: ShippingAddressEntity()),
         child: CheckoutViewBody(),
       ),
     );

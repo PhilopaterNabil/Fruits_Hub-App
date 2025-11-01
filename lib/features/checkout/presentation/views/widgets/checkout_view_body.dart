@@ -65,6 +65,9 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                 }
                 _formKey.currentState!.save();
               }
+              if (currentPageIndex == checkoutStepsTitles.length - 1) {
+                return;
+              }
               pageController.nextPage(
                 duration: Duration(milliseconds: 300),
                 curve: Curves.bounceIn,
