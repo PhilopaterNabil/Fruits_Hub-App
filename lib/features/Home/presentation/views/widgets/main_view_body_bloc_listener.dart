@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/helper/build_error_bar.dart';
+import 'package:fruits_hub/core/helper/show_error_bar.dart';
 import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
 import 'package:fruits_hub/features/Home/presentation/views/widgets/main_view_body.dart';
 
@@ -21,7 +21,7 @@ class MainViewBodyBlocListener extends StatelessWidget {
             ),
           );
         } else if (state is CartItemRemovedState) {
-          buildErrorBar(context, 'تمت إزالة المنتج من السلة بنجاح');
+          showErrorBar(context, 'تمت إزالة المنتج من السلة بنجاح');
         }
       },
       child: MainViewBody(currentViewIndex: currentViewIndex),

@@ -18,7 +18,7 @@ class CartViewBody extends StatelessWidget {
             SizedBox(height: 16),
             CustomAppBar(
               title: 'السلة',
-              isLeading: true,
+              isLeading: false,
             ),
             SizedBox(height: 16),
             CartHeader(),
