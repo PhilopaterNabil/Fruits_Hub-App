@@ -1,15 +1,19 @@
 class ShippingAddressEntity {
-  final String name;
-  final String phoneNumber;
-  final String address;
-  final String email;
-  final String addressDetails;
+  String? name;
+  String? phoneNumber;
+  String? address;
+  String? email;
+  String? city;
+  String? addressDetails;
+  String? floorNumber;
 
-  const ShippingAddressEntity({
-    required this.name,
-    required this.phoneNumber,
-    required this.address,
-    required this.email,
-    required this.addressDetails,
+  ShippingAddressEntity({
+    this.name,
+    this.phoneNumber,
+    this.address,
+    this.email,
+    this.city,
+    this.addressDetails,
+    this.floorNumber,
   });
 }

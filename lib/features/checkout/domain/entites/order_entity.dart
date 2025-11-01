@@ -4,9 +4,9 @@ import 'package:fruits_hub/features/checkout/domain/entites/shipping_address_ent
 class OrderEntity {
   final CartEntity cartItems;
   final bool? payWithCash;
-  final ShippingAddressEntity? shippingAddress;
+  ShippingAddressEntity? shippingAddress = ShippingAddressEntity();
 
-  const OrderEntity({
+  OrderEntity({
     required this.cartItems,
     this.payWithCash,
     this.shippingAddress,
