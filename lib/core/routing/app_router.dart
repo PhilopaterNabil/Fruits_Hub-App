@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/di/dependency_injection.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
+import 'package:fruits_hub/features/Home/domain/entites/cart_entity.dart';
 import 'package:fruits_hub/features/Home/presentation/views/main_view.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
@@ -48,7 +49,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.checkoutScreen,
-        builder: (context, state) => const CheckoutView(),
+        builder: (context, state) => CheckoutView(
+          cartItems: state.extra as CartEntity,
+        ),
       ),
       GoRoute(
         path: Routes.bestSellingFruitsScreen,

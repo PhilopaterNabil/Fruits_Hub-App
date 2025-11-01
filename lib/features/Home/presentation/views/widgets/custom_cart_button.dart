@@ -17,7 +17,7 @@ class CustomCartButton extends StatelessWidget {
         return CustomButton(
           onPressed: () {
             if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
-              context.push(Routes.checkoutScreen);
+              context.push(Routes.checkoutScreen, extra: context.read<CartCubit>().cartEntity);
             } else {
               showErrorBar(context, 'السلة فارغة! الرجاء إضافة منتجات قبل المتابعة.');
             }

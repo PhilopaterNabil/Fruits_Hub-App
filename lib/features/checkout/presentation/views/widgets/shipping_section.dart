@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/shipping_item.dart';
 
 class ShippingSection extends StatefulWidget {
@@ -33,7 +35,7 @@ class _ShippingSectionState extends State<ShippingSection> {
           isSelected: selectedIndex == 1,
           title: 'الدفع الالكتروني',
           subTitle: 'يرجي تحديد طريقه الدفع',
-          price: '40',
+          price: context.read<OrderEntity>().cartItems.totalPrice.toString(),
           onTap: () {
             setState(() {
               selectedIndex = 1;
