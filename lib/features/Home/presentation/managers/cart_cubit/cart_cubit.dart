@@ -19,7 +19,7 @@ class CartCubit extends Cubit<CartState> {
     var existingCartItem = cartEntity.getCartItem(productEntity);
 
     if (isProductExists) {
-      existingCartItem.incrementCount();
+      existingCartItem.incrementQuantity();
       // _updateProductInCart(productEntity);
     } else {
       _addNewProductToCart(productEntity);
@@ -29,7 +29,7 @@ class CartCubit extends Cubit<CartState> {
   }
 
   void _addNewProductToCart(ProductEntity productEntity) {
-    CartItemEntity cartItemEntity = CartItemEntity(productEntity: productEntity, count: 1);
+    CartItemEntity cartItemEntity = CartItemEntity(productEntity: productEntity, quantity: 1);
 
     cartEntity.addCartItem(cartItemEntity);
     emit(CartState.cartItemAdded());

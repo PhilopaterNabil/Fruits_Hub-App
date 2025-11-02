@@ -27,7 +27,7 @@ class CartEntity {
       if (cartItem.productEntity == productEntity) return cartItem;
     }
 
-    return CartItemEntity(productEntity: productEntity, count: 1);
+    return CartItemEntity(productEntity: productEntity, quantity: 1);
   }
 
   num get totalPrice => cartItems.fold(0, (sum, item) => sum + item.totalPrice);

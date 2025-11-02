@@ -25,7 +25,7 @@ class _ShippingSectionState extends State<ShippingSection> with AutomaticKeepAli
           isSelected: selectedIndex == 0,
           title: 'الدفع عند الاستلام',
           subTitle: 'التسليم من المكان',
-          price: (context.read<OrderEntity>().cartIentity.totalPrice * 1.1).toString(),
+          price: (context.read<OrderEntity>().cartIEntity.totalPrice * 1.1).toString(),
           onTap: () {
             setState(() {
               selectedIndex = 0;
@@ -37,7 +37,7 @@ class _ShippingSectionState extends State<ShippingSection> with AutomaticKeepAli
           isSelected: selectedIndex == 1,
           title: 'الدفع الالكتروني',
           subTitle: 'يرجي تحديد طريقه الدفع',
-          price: context.read<OrderEntity>().cartIentity.totalPrice.toString(),
+          price: context.read<OrderEntity>().cartIEntity.totalPrice.toString(),
           onTap: () {
             setState(() {
               selectedIndex = 1;

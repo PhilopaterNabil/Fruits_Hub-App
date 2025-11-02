@@ -12,7 +12,7 @@ class OrderSummaryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OrderEntity order = context.read<OrderEntity>();
-    num totalPrice = order.cartIentity.totalPrice;
+    num totalPrice = order.cartIEntity.totalPrice;
     double deliveryFee = (totalPrice * 1.1) - totalPrice;
 
     return PaymentItem(
@@ -31,7 +31,7 @@ class OrderSummaryWidget extends StatelessWidget {
                 ),
                 Spacer(),
                 Text(
-                  '${context.read<OrderEntity>().cartIentity.totalPrice} جنيه',
+                  '${context.read<OrderEntity>().cartIEntity.totalPrice} جنيه',
                   style: AppTextStyles.font16GreySemiBold.copyWith(
                     color: AppColors.blackColor,
                   ),
