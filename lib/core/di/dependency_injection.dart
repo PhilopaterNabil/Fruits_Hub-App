@@ -27,8 +27,12 @@ Future<void> setupGetIt() async {
 
   // firebase auth service
   getIt.registerLazySingleton<FirebaseAuthService>(() => FirebaseAuthService());
-  // database service
-  getIt.registerLazySingleton<DatabaseService>(() => FirestoreService());
+
+  // firestore / database service
+  // create single FirestoreService instance and register for both types
+  final _firestoreService = FirestoreService();
+  getIt.registerLazySingleton<FirestoreService>(() => _firestoreService);
+  getIt.registerLazySingleton<DatabaseService>(() => _firestoreService);
 
   // splash
   getIt.registerLazySingleton<SplashRepo>(() => SplashRepoImpl());

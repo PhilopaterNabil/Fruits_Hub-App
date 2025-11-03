@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/helper/show_error_bar.dart';
+import 'package:fruits_hub/core/helper/show_bar.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/features/Home/presentation/managers/cart_cubit/cart_cubit.dart';
@@ -19,7 +19,7 @@ class CustomCartButton extends StatelessWidget {
             if (context.read<CartCubit>().cartEntity.cartItems.isNotEmpty) {
               context.push(Routes.checkoutScreen, extra: context.read<CartCubit>().cartEntity);
             } else {
-              showErrorBar(context, 'السلة فارغة! الرجاء إضافة منتجات قبل المتابعة.');
+              showBar(context, 'السلة فارغة! الرجاء إضافة منتجات قبل المتابعة.');
             }
           },
           title: 'الدفع  ${context.watch<CartCubit>().cartEntity.totalPrice} جنيه',

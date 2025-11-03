@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
+import 'package:fruits_hub/features/checkout/presentation/managers/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps_page_view.dart';
 
@@ -66,8 +69,10 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                 _formKey.currentState!.save();
               }
               if (currentPageIndex == checkoutStepsTitles.length - 1) {
-                return;
+                var orderEntity = context.read<OrderEntity>();
+                context.read<AddOrderCubit>().addOrder(orderEntity: orderEntity);
               }
+
               pageController.nextPage(
                 duration: Duration(milliseconds: 300),
                 curve: Curves.bounceIn,

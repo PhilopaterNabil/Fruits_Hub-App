@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/core/helper/show_error_bar.dart';
+import 'package:fruits_hub/core/helper/show_bar.dart';
 import 'package:fruits_hub/core/helper/extensions.dart';
 import 'package:fruits_hub/core/routing/routes.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
@@ -24,7 +24,7 @@ class SignupButtonBlocConsumer extends StatelessWidget {
             // context.pop();
             context.pushReplacementTo(Routes.loginScreen);
           },
-          failure: (message) => showErrorBar(context, message),
+          failure: (message) => showBar(context, message),
           orElse: () {},
         );
       },
