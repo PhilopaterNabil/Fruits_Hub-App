@@ -1,4 +1,6 @@
 import 'package:fruits_hub/core/cubits/products_cubit/products_cubit.dart';
+import 'package:fruits_hub/core/repos/orders_repo/orders_repo.dart';
+import 'package:fruits_hub/core/repos/orders_repo/orders_repo_impl.dart';
 import 'package:fruits_hub/core/repos/products_repo/products_repo.dart';
 import 'package:fruits_hub/core/repos/products_repo/products_repo_impl.dart';
 import 'package:fruits_hub/core/services/database_service.dart';
@@ -10,6 +12,7 @@ import 'package:fruits_hub/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/login_cubit/login_cubit.dart';
 import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/signup_cubit.dart';
+import 'package:fruits_hub/features/checkout/presentation/managers/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits_hub/features/splash/data/repos/splash_repo.dart';
 import 'package:fruits_hub/features/splash/data/repos/splash_repo_impl.dart';
 import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
@@ -52,4 +55,9 @@ Future<void> setupGetIt() async {
 
   // cart item
   getIt.registerFactory<CartItemCubit>(() => CartItemCubit());
+
+  // orders
+  getIt.registerLazySingleton<OrdersRepo>(() => OrdersRepoImpl(firestoreService: getIt<FirestoreService>()));
+  getIt.registerFactory<AddOrderCubit>(() => AddOrderCubit(getIt()));
+
 }

@@ -8,6 +8,7 @@ import 'package:fruits_hub/features/auth/presentation/managers/signup_cubit/sign
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/features/auth/presentation/views/signup_view.dart';
 import 'package:fruits_hub/features/best_selling_fruits/presentation/views/best_selling_fruits_view.dart';
+import 'package:fruits_hub/features/checkout/presentation/managers/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/checkout_view.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:fruits_hub/features/splash/presentation/managers/splash_cubit/splash_cubit.dart';
@@ -49,8 +50,11 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: Routes.checkoutScreen,
-        builder: (context, state) => CheckoutView(
-          cartItems: state.extra as CartEntity,
+        builder: (context, state) => BlocProvider(
+          create: (context) => getIt<AddOrderCubit>(),
+          child: CheckoutView(
+            cartItems: state.extra as CartEntity,
+          ),
         ),
       ),
       GoRoute(
