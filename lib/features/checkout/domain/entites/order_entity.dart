@@ -13,4 +13,20 @@ class OrderEntity {
     this.payWithCash,
     required this.shippingAddress,
   });
+
+  double calculateShippingCost() {
+    if (payWithCash == true) {
+      return cartIEntity.totalPrice * 1.1 - cartIEntity.totalPrice;
+    } else {
+      return 0;
+    }
+  }
+
+  double calculateShippingDiscount() {
+    return 0;
+  }
+
+  double calculateTotalPriceAfterDiscountAndShipping() {
+    return cartIEntity.totalPrice + calculateShippingCost() - calculateShippingDiscount();
+  }
 }

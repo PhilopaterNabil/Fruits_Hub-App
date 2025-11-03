@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
 import 'package:fruits_hub/features/checkout/presentation/managers/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps_page_view.dart';
+import 'package:go_router/go_router.dart';
 
 class CheckoutViewBody extends StatefulWidget {
   const CheckoutViewBody({super.key});
@@ -69,8 +71,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                 _formKey.currentState!.save();
               }
               if (currentPageIndex == checkoutStepsTitles.length - 1) {
-                var orderEntity = context.read<OrderEntity>();
-                context.read<AddOrderCubit>().addOrder(orderEntity: orderEntity);
+                _processPayment(context);
               }
 
               pageController.nextPage(
@@ -82,6 +83,31 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
           ),
           SizedBox(height: 16.h),
         ],
+      ),
+    );
+  }
+
+  void _processPayment(BuildContext context) {
+    var orderEntity = context.read<OrderEntity>();
+    context.read<AddOrderCubit>().addOrder(orderEntity: orderEntity);
+
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => PaypalCheckoutView(
+          sandboxMode: true,
+          clientId: "AYJ2...your_client_id...X",
+          secretKey: '',
+          transactions: [],
+          onSuccess: (result) {
+            context.pop();
+          },
+          onError: (error) {
+            context.pop();
+          },
+          onCancel: () {
+            context.pop();
+          },
+        ),
       ),
     );
   }
