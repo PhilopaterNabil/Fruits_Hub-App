@@ -6,14 +6,12 @@ class CheckoutSteps extends StatelessWidget {
     super.key,
     required this.currentPageIndex,
     required this.pageController,
-    required this.formKey,
-    required this.autovalidateMode,
+    required this.onTap,
   });
 
   final int currentPageIndex;
   final PageController pageController;
-  final GlobalKey<FormState> formKey;
-  final ValueNotifier<AutovalidateMode> autovalidateMode;
+  final ValueChanged<int> onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -22,27 +20,29 @@ class CheckoutSteps extends StatelessWidget {
         checkoutStepsTitles.length,
         (index) => Expanded(
           child: GestureDetector(
-            onTap: () {
-              if (index == currentPageIndex) return;
-              if (index == 2) {
-                final bool isValid = formKey.currentState?.validate() ?? false;
-                autovalidateMode.value = AutovalidateMode.always;
-                if (!isValid) {
-                  pageController.animateToPage(
-                    1,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                  return;
-                }
-              }
+            onTap: () => onTap(index),
+            //  () {
+            //   if (index == currentPageIndex) return;
+            //   if (index == 2) {
+            //     final bool isValid = formKey.currentState?.validate() ?? false;
+            //     autovalidateMode.value = AutovalidateMode.always;
+            //     formKey.currentState?.save();
+            //     if (!isValid) {
+            //       pageController.animateToPage(
+            //         1,
+            //         duration: const Duration(milliseconds: 300),
+            //         curve: Curves.easeInOut,
+            //       );
+            //       return;
+            //     }
+            //   }
 
-              pageController.animateToPage(
-                index,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-              );
-            },
+            //   pageController.animateToPage(
+            //     index,
+            //     duration: const Duration(milliseconds: 300),
+            //     curve: Curves.easeInOut,
+            //   );
+            // },
             child: StepItem(
               isActive: index <= currentPageIndex,
               index: (index + 1).toString(),

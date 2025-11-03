@@ -8,21 +8,34 @@ import 'package:fruits_hub/features/checkout/presentation/views/widgets/add_orde
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_view_body.dart';
 import 'package:provider/provider.dart';
 
-class CheckoutView extends StatelessWidget {
+class CheckoutView extends StatefulWidget {
   const CheckoutView({super.key, required this.cartItems});
 
   final CartEntity cartItems;
+
+  @override
+  State<CheckoutView> createState() => _CheckoutViewState();
+}
+
+class _CheckoutViewState extends State<CheckoutView> {
+  late OrderEntity orderEntity;
+
+  @override
+  void initState() {
+    super.initState();
+    orderEntity = OrderEntity(
+      uId: getUser().uId,
+      cartIEntity: widget.cartItems,
+      shippingAddress: ShippingAddressEntity(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: 'الشحن'),
       body: Provider.value(
-        value: OrderEntity(
-          uId: getUser().uId,
-          cartIEntity: cartItems,
-          shippingAddress: ShippingAddressEntity(),
-        ),
+        value: orderEntity,
         child: AddOrderCubitBlocBuilder(child: CheckoutViewBody()),
       ),
     );
