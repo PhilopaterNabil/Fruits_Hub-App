@@ -1,4 +1,4 @@
-import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_input_entity.dart';
 import 'package:fruits_hub/features/checkout/domain/entites/paypal_payment_entity/amount.dart';
 import 'package:fruits_hub/features/checkout/domain/entites/paypal_payment_entity/item_list.dart';
 
@@ -10,7 +10,7 @@ class PaypalPaymentEntity {
 
   PaypalPaymentEntity({this.amount, this.description, this.itemList});
 
-  factory PaypalPaymentEntity.fromEntity(OrderEntity entity) {
+  factory PaypalPaymentEntity.fromEntity(OrderInputEntity entity) {
     return PaypalPaymentEntity(
       amount: Amount.fromEntity(entity),
       description: 'Payment description',

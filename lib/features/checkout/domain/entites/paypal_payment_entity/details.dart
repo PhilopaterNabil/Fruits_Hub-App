@@ -1,4 +1,4 @@
-import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_input_entity.dart';
 
 class DetailsEntity {
   String? subtotal;
@@ -13,7 +13,7 @@ class DetailsEntity {
         'shipping_discount': shippingDiscount,
       };
 
-  factory DetailsEntity.fromEntity(OrderEntity entity) => DetailsEntity(
+  factory DetailsEntity.fromEntity(OrderInputEntity entity) => DetailsEntity(
         subtotal: entity.cartIEntity.totalPrice.toString(),
         shipping: entity.calculateShippingCost().toString(),
         shippingDiscount: entity.calculateShippingDiscount(),

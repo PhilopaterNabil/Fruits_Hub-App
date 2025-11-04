@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/helper/show_bar.dart';
 import 'package:fruits_hub/core/utils/app_keys.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
-import 'package:fruits_hub/features/checkout/domain/entites/order_entity.dart';
+import 'package:fruits_hub/features/checkout/domain/entites/order_input_entity.dart';
 import 'package:fruits_hub/features/checkout/domain/entites/paypal_payment_entity/lib/features/checkout/domain/entites/paypal_payment_entity/paypal_payment_entity.dart';
 import 'package:fruits_hub/features/checkout/presentation/managers/add_order_cubit/add_order_cubit.dart';
 import 'package:fruits_hub/features/checkout/presentation/views/widgets/checkout_steps.dart';
@@ -113,7 +113,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   }
 
   void _processPayment(BuildContext context) {
-    var orderEntity = context.read<OrderEntity>();
+    var orderEntity = context.read<OrderInputEntity>();
     PaypalPaymentEntity paypalPaymentEntity = PaypalPaymentEntity.fromEntity(orderEntity);
 
     var addOrderCubit = context.read<AddOrderCubit>();
